@@ -6,7 +6,6 @@ from routes.api import api
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_BINDS'] = {
-    'host_db': 'sqlite:///C:/Users/benca/ProjectBandI/tables/host.db',
     'event_db': 'sqlite:///C:/Users/benca/ProjectBandI/tables/event.db'
 }
 
@@ -20,7 +19,6 @@ db.init_app(app)
 
 with app.app_context():
     db.create_all(bind_key='event_db')  
-    db.create_all(bind_key='host_db')
 app.register_blueprint(main)
 app.register_blueprint(api, url_prefix='/api')
 
