@@ -9,26 +9,17 @@
 }
 .button3
 {
-    color: #333;
+    color: #dbd8c4de;
+    letter-spacing: .15rem;
     cursor: pointer;
-    display: flex;
     width: 110px;
     height: 65px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 110px;
     border-color: #ab6ddd;
     background: var(--Schemes-Primary, #ab6ddd);
     font-family: Varela Round;
-    font-weight: bold;
     transition: all 0.1s ease-in-out;
-}
-
-.home_div
-{
-   
 }
 
 .host_list
@@ -58,9 +49,11 @@
 }
  .pop_l
  {
+    
+    animation: fadeIn 8s ease-in;
     text-decoration: None;
     color: #ab6ddd;
-    font-size: 40px;
+    font-size: 30px;
  }
 
 .pop_l:hover
@@ -113,6 +106,12 @@
     justify-content: center;
 }
 
+@keyframes entry
+{
+    0% {color:#222020d1; top:200px;}
+    100% {color:#ab6ddd; top:0px;}
+}
+
 .title
 {
     margin-top: 30px;
@@ -120,6 +119,8 @@
     font-size: 70px;
     color: #ab6ddd;
     font-weight: bold;
+    animation-name: entry;
+    animation-duration: 2.7s;
 }
 
 
@@ -269,29 +270,50 @@
     margin-top:-20px;
 }
 
+@keyframes fadeIn 
+ {
+        from 
+        {
+            opacity: 0;
+
+        }
+        to 
+        {
+            opacity: 1;
+        }
+}
+
 .ben_ashamen
 {
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 20px;
     margin-top: -45px;
     gap: 7px;
+    animation: fadeIn 1s ease-in 1.5s forwards;
 }
 
+.pop_counter
+{
+    color:darkgray;
+}
+    
 .insta_link
 {
     font-size: 20px;
-    text-decoration: none;
     font-weight: bolder;
+    text-decoration: none;
     font-family: 'Varela Round', sans-serif;
     color: darkgray;
 }
 
 .insta_link:hover
 {
-    cursor: pointer;
     text-decoration: underline;
+    cursor: pointer;
+    color: #ab6ddd;
 }
 
 .container_signup
@@ -395,7 +417,8 @@ input[type="password"] {
     align-items: flex-start;
 }
 
-input[type="date"], input[type="time"] {
+input[type="date"], input[type="time"]
+ {
     width: 100%;
     max-width: 150px;
     padding: 10px;
@@ -424,7 +447,6 @@ th
     padding: 10px;
     text-align: center; 
     border: 1px solid darkgray(232, 222, 222);
-    font-size: x-large;
     font-weight: bold;
     background-color: #ab6ddd;
 }
@@ -433,7 +455,7 @@ td {
     border: 1px solid darkgray; 
     padding: 10px; 
     text-align: center; 
-    font-size:large;
+    background-color: white;
 }
 
 textarea 

@@ -37,7 +37,7 @@ def delete_event_by_id(id):
         return render_template('admin_page.html', events=Event.query.all())
     db.session.delete(event)
     db.session.commit()
-    flash(" Event deleted successfully ")
+    flash("Event deleted successfully")
     return render_template('admin_page.html', events=Event.query.all())
 
 @main.route('/pop_list')
@@ -46,18 +46,19 @@ def pop_list():
     date_b = (datetime.now() + timedelta(days=7)).date()
     event_count = Event.query.filter(Event.event_date >= date_a, Event.event_date <= date_b).count()
     return render_template('pop_list.html', event_count=event_count)
+
+@main.route('/ramen_list')
+def ramen_list():
+    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all()
+    return render_template('ramen.html', ramen_list=ramen_list)
+
+@main.route('/wine_list')
+def wine_list():
+    return render_template('wine.html')
     
-@main.route('/food_list')
-def food_list():
-    return render_template('food_list.html')
-
-@main.route('/drink_list')
-def music_list():
-    return render_template('drink_list.html')
-
-@main.route('/art_list')
-def art_list():
-    return render_template('art_list.html')
+@main.route('/other_list')
+def other_list():
+    return render_template('other.html')
 
 @main.route('/index', methods=['GET', 'POST'])
 def homepage_after():
@@ -92,7 +93,7 @@ def event_form():
         ).first()
         if exists:
             flash("Event already registered")
-            return redirect('/my_events')
+            return redirect('/admin_page')
         message = validate_event(host,event_name,event_type, description, address, event_date, time, price_range, phone)
         if message == "":
             new_event = Event(
@@ -108,24 +109,20 @@ def event_form():
             )
             db.session.add(new_event)
             db.session.commit()
-            return render_template('my_events.html', my_events=Event.query.all())
+            return render_template('admin_page.html', my_events=Event.query.all())
         else:
             flash(message)
             return render_template('new_event.html', form_data=request.form)
     return render_template('new_event.html')
 
-@main.route('/my_events')
-def my_events():
-    my_events = Event.query.order_by(Event.event_date.desc(), Event.time.desc()).all()
-    return render_template('my_events.html', my_events=my_events)
 
 @main.route('/delete_my_event_by_id/<int:id>', methods=['POST'])
 def delete_my_event_by_id(id):
     event = Event.query.get(id)
     if not event:
         flash("Event not found")
-        return render_template('my_events.html')
+        return render_template('admin_page.html')
     db.session.delete(event)
     db.session.commit()
     flash("Event deleted successfully")
-    return render_template('my_events.html', my_events=Event.query.all())
+    return render_template('admin_page.html', my_events=Event.query.all())

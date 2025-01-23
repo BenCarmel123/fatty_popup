@@ -9,47 +9,49 @@
     <div class = "corner_links">
         <a href="/"> Homepage </a>
     </div>
-    <h2 class = "admin_panel">
-    {{ first_name }}'s Admin panel
-    </h2>
-    <br> <br>
+    <br> 
     {% with message = get_flashed_messages() %}
     {% if message %}
         <h2 class ="error"> {{ message }} </h2> 
     {% endif %}
     {% endwith %}
+    <h2 class = "admin_panel">
+        {{ first_name }}'s Admin Panel
+        </h2>
     {% with events = events %}
-    <h2 class="admin_panel"> Events </h2>
     {% if events %}
     <table>
         <tr>
+            <th>Host</th>
             <th>Event Type</th>
             <th>Address</th>
-            <th>Event Date</th>
+            <th>Date</th>
             <th>Time</th>
-
+            <th>Phone</th>
+            <th>Actions</th>
         </tr>
     {% for event in events %}
-        <div>
             <tr>    
                 <td> {{ event.host }} </td>
-                <td> {{ event.event_name }}</td>
-                <td> {{ event.address }} </td>
+                <td> {{ event.event_type }} </td>
+                <td> {{ event.address }}</td>
                 <td> {{ event.event_date }} </td>
+                <td> {{ event.time.strftime('%H:%M') }} </td> 
+                <td> {{ event.phone[:3] + "-" + event.phone[3:] }} </td>
                 <td>
                     <form action="{{ url_for('main.delete_event_by_id', id=event.id) }}" method="POST">
                         <button type="submit" class="delete_button">X</button>
                     </form>      
                  </td>      
             </tr>
-        </div>
     {% endfor %}
     </table>
-            {% endif %}
+    {% endif %}
     {% endwith %}
     <br> <br> <br> <br>
-
-    <a class='button3', href='/new_event'> Add Event </a>
+    <a href='/new_event'> 
+        <button class="button3"> Add Events </button>
+    </a>
 
 </body>
 

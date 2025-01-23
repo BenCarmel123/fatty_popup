@@ -1,0 +1,43 @@
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+        <body>
+            <div class = "corner_links">
+                <a href="/"> Homepage </a>
+            </div>
+            <h1 class="title"> Ramen Pop-ups </h1>
+            {% with ramen_list = ramen_list %}
+            {% if not ramen_list  %}
+              <h4 class="pop_counter"> No ramen pop-ups this week </h4>
+              {% else %}
+              <table>
+                <tr>
+                    <th>Host</th>
+                    <th>Event Type</th>
+                    <th>Address</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Price Range</th>
+                    <th>Phone</th>
+                </tr>
+            {% for event in ramen_list %}
+                    <tr>    
+                        <td> {{ event.host }} </td>
+                        <td> {{ event.event_type }} </td>
+                        <td> {{ event.address }}</td>
+                        <td> {{ event.event_date }} </td>
+                        <td> {{ event.time.strftime('%H:%M') }} </td> 
+                        <td> {{event.price_range}} </td>
+                        <td> {{ event.phone[:3] + "-" + event.phone[3:] }} </td>     
+                    </tr>
+            {% endfor %}
+            </table>
+            {% endif %}
+            {% endwith %}
+        </body>
+</html>

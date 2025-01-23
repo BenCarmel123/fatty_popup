@@ -24,12 +24,6 @@ def valid_word(word):
 
 def validate_event(host, event_name, event_type, description, address, event_date, time, price_range, phone):
     res = ""
-    for word in (host + "" + event_name):
-        if  not valid_word(word):
-            res += "Event name" if word in event_name else "Host Name" + "\n"
-            break
-    if valid_word(event_name):
-        res += "Event name" + "\n"
     if event_type == "select":
         res += "Event type" + "\n"
     if not description or len(description) > 100:
