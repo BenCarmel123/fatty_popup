@@ -7,6 +7,7 @@
     font-size: small;
 
 }
+
 .button3
 {
     color: white;
@@ -23,6 +24,9 @@
     transition: all 0.1s ease-in-out;
 }
 
+.button3:hover {
+    box-shadow: 0 4px 15px rgba(171, 109, 221, 0.5);
+}
 .table_container
 {
     overflow-x: auto;
