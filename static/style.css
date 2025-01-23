@@ -9,7 +9,8 @@
 }
 .button3
 {
-    color: #dbd8c4de;
+    color: white;
+    font-weight: bold;
     letter-spacing: .15rem;
     cursor: pointer;
     width: 110px;
@@ -289,7 +290,7 @@
     font-size: 20px;
     margin-top: -45px;
     gap: 7px;
-    animation: fadeIn 1s ease-in 1.5s forwards;
+    animation: fadeIn 1s ease-in 1s forwards;
 }
 
 .pop_counter
