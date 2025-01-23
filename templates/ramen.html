@@ -16,6 +16,7 @@
             {% if not ramen_list  %}
               <h4 class="pop_counter"> No ramen pop-ups this week </h4>
               {% else %}
+            <div class="table_container">
               <table>
                 <tr>
                     <th>Host</th>
@@ -38,6 +39,7 @@
                     </tr>
             {% endfor %}
             </table>
+            </div>
             {% endif %}
             {% endwith %}
         </body>
