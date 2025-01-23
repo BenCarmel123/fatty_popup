@@ -341,7 +341,7 @@ body
 {
     text-align: center;   
     font-family: Varela Round;      
-    background-image: radial-gradient(#222020d1 9%, #191818);
+    background-image: radial-gradient(#d60000d1 9%, #191818);
     -webkit-font-smoothing: antialiased;
     letter-spacing: .2rem;
 }
