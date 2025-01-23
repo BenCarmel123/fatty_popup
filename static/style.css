@@ -124,13 +124,16 @@
 
 .title
 {
-    margin-top: 30px;
     font-family: 'Varela Round', sans-serif;
     font-size: 70px;
-    color: #ab6ddd;
     font-weight: bold;
     animation-name: entry;
     animation-duration: 2.7s;
+    background: linear-gradient(to right, #ab6ddd, #6823a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 
@@ -489,5 +492,13 @@ h1
 {
     color:#ab6ddd
 }
+
+tbody tr:nth-child(even) {
+    background-color: #f5f5f5; 
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: white;
+  }
 
 
