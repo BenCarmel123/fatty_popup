@@ -27,7 +27,7 @@
             <th>Address</th>
             <th>Date</th>
             <th>Time</th>
-            <th>Phone</th>
+            <th>Contact Details</th>
             <th>Actions</th>
         </tr>
     {% for event in events %}
@@ -35,10 +35,14 @@
                 <td> {{ event.host }} </td>
                 <td> {{ event.event_type }} </td>
                 <td> {{ event.address }}</td>
-                <td> {{ event.event_date }} </td>
+                <td> {{ event.date }} </td>
                 <td> {{ event.time.strftime('%H:%M') }} </td> 
-                <td> {{ event.phone[:3] + "-" + event.phone[3:] }} </td>
-                <td>
+                {% set contact_details = event.contact[:3] + "-" + event.contact[3:] if event.contact[:2] == "05" else "@" + event.contact %}
+                {% if contact_details[0] =="@"%}
+                <td> <a class="ben_ashamen"> {{contact_details}} </a> </td>
+                {% else %}
+                <td>{{ contact_details }}</td>
+                {% endif %}
                     <form action="{{ url_for('main.delete_event_by_id', id=event.id) }}" method="POST">
                         <button type="submit" class="delete_button">X</button>
                     </form>      

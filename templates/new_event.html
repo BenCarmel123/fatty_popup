@@ -53,9 +53,9 @@
             </div>
                 <div class = "item4">
                 <div class="date_time">
-                    <label for="event_date" class="form_field"> Date </label>
-                    <input class ="event_input" type="date" id="event_date" name="event_date" 
-                        value="{{ form_data.event_date if form_data else '' }}" required >
+                    <label for="date" class="form_field"> Date </label>
+                    <input class ="event_input" type="date" id="date" name="date" 
+                        value="{{ form_data.date if form_data else '' }}" required >
                 </div>
                 </div>
                 <div class="item5">
@@ -71,9 +71,9 @@
                        value="{{ form_data.price_range if form_data else '' }}" required >
                 </div>
                 <div class = "item7">
-                    <label for="phone" class="form_field"> Phone Number </label>
+                    <label for="contact" class="form_field"> Contact <Details></Details> </label>
                     <input class ="event_input" type="text" id="phone" name="phone" placeholder="05" maxlength="10" 
-                           value="{{ form_data.phone if form_data else '' }}" required >
+                           value="{{ form_data.contact if form_data else '' }}" required >
                 </div>
                 </div>
             </div>

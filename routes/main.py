@@ -49,20 +49,20 @@ def pop_list():
 
 @main.route('/ramen_list')
 def ramen_list():
-    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all()
+    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all().sort(key=lambda x: x.event_date)
     return render_template('ramen.html', ramen_list=ramen_list)
 
 @main.route('/wine_list')
 def wine_list():
-    return render_template('wine.html')
+    wine_list = Event.query.filter(Event.event_type.ilike('wine')).all().sort(key=lambda x: x.event_date)
+    return render_template('wine.html' , wine_list=wine_list)
     
 @main.route('/other_list')
 def other_list():
-    return render_template('other.html')
-
-@main.route('/index', methods=['GET', 'POST'])
-def homepage_after():
-    return render_template('home.html')
+    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all().sort(key=lambda x: x.event_date)
+    wine_list = Event.query.filter(Event.event_type.ilike('wine')).all().sort(key=lambda x: x.event_date)
+    other_list = [for event in Event.query.all() if event not in ramen_list and event not in wine_list]
+    return render_template('other.html', other_list=other_list)
 
 
 @main.route('/new_event', methods=['GET', 'POST'])
@@ -72,20 +72,20 @@ def event_form():
     event_type = db.Column(db.String(20), nullable=False)
     description = db.Column(db.Text, nullable=False)
     address = db.Column(db.String(100), nullable=False)
-    event_date = db.Column(db.Date, nullable=False)
+    date = db.Column(db.Date, nullable=False)
     time = db.Column(db.Time, nullable=False)
     price_range = db.Column(db.String(30), nullable=False)
-    phone = db.Column(db.String(10), nullable=False)
+    contact = db.Column(db.String(10), nullable=False)
     if request.method == 'POST':
         host = request.form['host']
         event_name = request.form['event_name']
         event_type = request.form['event_type']
         description = request.form['description']
         address = request.form['address']
-        event_date = datetime.strptime(request.form['event_date'], "%Y-%m-%d").date()
+        date = datetime.strptime(request.form['event_date'], "%Y-%m-%d").date()
         time = datetime.strptime(request.form['time'], "%H:%M").time()
         price_range = request.form['price_range']
-        phone = request.form['phone']
+        contact = request.form['contact']
         exists = Event.query.filter(
             Event.address.ilike(address.strip()),
             Event.event_date == event_date,
@@ -94,7 +94,7 @@ def event_form():
         if exists:
             flash("Event already registered")
             return redirect('/admin_page')
-        message = validate_event(host,event_name,event_type, description, address, event_date, time, price_range, phone)
+        message = validate_event(host,event_name,event_type, description, address, date, time, price_range, contact)
         if message == "":
             new_event = Event(
                 host=host,
@@ -102,10 +102,10 @@ def event_form():
                 event_type=event_type,
                 description=description,
                 address=address,
-                event_date=event_date,
+                date=event,
                 time=time,
                 price_range=price_range,
-                phone=phone
+                contact=contact
             )
             db.session.add(new_event)
             db.session.commit()
