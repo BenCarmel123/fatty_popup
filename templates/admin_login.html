@@ -9,12 +9,12 @@
     <div class = "corner_links">
         <a href="/"> Homepage </a>
     </div>
-    <br> <br> <br> <br> <br> <br> 
+    <br> <br> 
     {%with messages = get_flashed_messages() %}
         {% if messages %}
             <ul>
                 {% for message in messages %}
-                    <li> {{ message }} </li>
+                    <li class="error"> {{ message }} </li>
                 {% endfor %}
             </ul>
         {% endif %}

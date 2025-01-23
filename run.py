@@ -5,20 +5,20 @@ from routes.api import api
 
 app = Flask(__name__)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/BenCarmel123/fatty-popup/tables/main.db'
 app.config['SQLALCHEMY_BINDS'] = {
-    'event_db': 'sqlite:///C:/Users/benca/ProjectBandI/tables/event.db'
+    'event_db': 'sqlite:////home/BenCarmel123/fatty-popup/tables/event.db'
 }
 
 app.config['ADMIN_USERNAME'] = 'affogato_master'
 app.config['ADMIN_PASSWORD'] = 'BenjiBear1'
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'benji'
 
 db.init_app(app)
-
 with app.app_context():
-    db.create_all(bind_key='event_db')  
+    db.create_all()
+
 app.register_blueprint(main)
 app.register_blueprint(api, url_prefix='/api')
 
