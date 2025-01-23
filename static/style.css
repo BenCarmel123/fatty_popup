@@ -50,7 +50,7 @@
  .pop_l
  {
     
-    animation: fadeIn 6s ease-in;
+    animation: fadeIn 4s;
     text-decoration: None;
     color: #ab6ddd;
     font-size: 30px;
@@ -338,7 +338,7 @@ body
 {
     text-align: center;   
     font-family: Varela Round;      
-    background-image: radial-gradient(#ffe1c6d1 9%, #191818);
+    background-image: radial-gradient(#fff583 9%, #ffffb4);
     -webkit-font-smoothing: antialiased;
     letter-spacing: .2rem;
 }
