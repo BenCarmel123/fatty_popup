@@ -219,17 +219,17 @@
     padding: 5px;
     gap:5px;
 }
-.password_container button 
-{
-    background-size: 160%;
-    border-radius: 8px;
-    border-color: darkgray;
-    background-position: center; 
-    width: 20px; 
-    height: 20px;
-    overflow: hidden;
+
+.password_container button
+ {
+    background-size: 193%;
+    margin-top: 4px;
+    border-radius: 15px;
+    background-position: center;
+    width: 29px;
+    height: 18px;
     cursor: pointer;
-    background-image: url('../static/images/vecteezy_preview-show-interface-icon_6086018.jpg');
+    background-image: url(../static/images/vecteezy_preview-show-interface-icon_6086018.jpg);
 }
 
 .date_time
