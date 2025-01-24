@@ -61,7 +61,7 @@ def wine_list():
 def other_list():
     ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all().sort(key=lambda x: x.event_date)
     wine_list = Event.query.filter(Event.event_type.ilike('wine')).all().sort(key=lambda x: x.event_date)
-    other_list = [for event in Event.query.all() if event not in ramen_list and event not in wine_list]
+    other_list = [event for event in Event.query.all() if event not in ramen_list and event not in wine_list]
     return render_template('other.html', other_list=other_list)
 
 
