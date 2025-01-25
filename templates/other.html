@@ -1,12 +1,62 @@
 <html>
     <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
-        <body>
-
+    <body>
+        <div class="corner_links">
+            <a href="/"> Homepage </a>
+        </div>
+        <br> <br>
+        <h1> Pop-ups </h1>
+        {% with other_list = other_list %}
+        {% if not other_list %}
+          <h4 class="pop_counter"> No upcoming pop-ups </h4>
+        {% else %}
+        <div class="table_container">
+            <table>
+                <tr>
+                    <th>Host</th>
+                    <th>Event</th>
+                    <th>Address</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Price Range</th>
+                    <th>Contact</th>
+                </tr>
+                {% for event in ramen_list %}
+                    <tr>
+                        <td> {{ event.host }} </td>
+                        <td> {{ event.event_type }} </td>
+                        <td>
+                            <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
+                            target="_blank"> {{ event.address }}
+                            </a>
+                        </td>
+                        <td> {{ event.event_date.strftime('%d.%m') }} </td>
+                        <td> {{ event.time.strftime('%H:%M') }} </td>
+                        <td> {{ event.price_range }} </td>
+                        {% with contact = event.contact %}
+                        {% if contact[:2] == "05" %}
+                        <td> {{ contact[:3] + "-" + contact[3:] }} </td>
+                        {% elif ".com" not in contact  %}
+                        <td>
+                            <a class="ben_ashamen" href="https://www.instagram.com/{{ event.contact }}" 
+                            target="_blank"> {{ "@" + event.contact }}
+                            </a>
+                        </td>
+                        {% else %}
+                        <td> {{ contact }} </td>
+                        {% endif %}
+                        {% endwith %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+            {% endwith %}
         </body>
 </html>
