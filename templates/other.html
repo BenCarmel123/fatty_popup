@@ -14,7 +14,7 @@
         <h1> Pop-ups </h1>
         {% with other_list = other_list %}
         {% if not other_list %}
-          <h4 class="pop_counter"> No upcoming pop-ups </h4>
+        <h4 class="pop_counter"> No upcoming pop-ups </h4>
         {% else %}
         <div class="table_container">
             <table>
@@ -27,7 +27,7 @@
                     <th>Price Range</th>
                     <th>Contact</th>
                 </tr>
-                {% for event in ramen_list %}
+                {% for event in other_list %}
                     <tr>
                         <td> {{ event.host }} </td>
                         <td> {{ event.event_type }} </td>
