@@ -5,7 +5,6 @@
     text-align: center;
     list-style-position: inside;
     font-size: small;
-
 }
 
 .button3
@@ -130,16 +129,10 @@
     font-weight: 700;
     animation-name: entry;
     animation-duration: 2.7s;
-    background: linear-gradient(to right, #ab6ddd, #6823a1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-stroke-width: thin;
 }
 
 
-/* Style the links */
+
 .corner_links  a 
 {
     font-family: 'Varela Round', sans-serif;
