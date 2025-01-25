@@ -20,42 +20,51 @@
         </h2>
     {% with events = events %}
     {% if events %}
+    <div class="table_container">
     <table>
         <tr>
             <th>Host</th>
-            <th>Event Type</th>
+            <th>Event</th>
             <th>Address</th>
             <th>Date</th>
             <th>Time</th>
-            <th>Contact Details</th>
-            <th>Actions</th>
+            <th>Price Range</th>
+            <th>Contact</th>
         </tr>
-    {% for event in events %}
-            <tr>    
+        {% for event in events %}
+            <tr>
                 <td> {{ event.host }} </td>
                 <td> {{ event.event_type }} </td>
-                <td> {{ event.address }}</td>
-                <td> {{ event.date }} </td>
-                <td> {{ event.time.strftime('%H:%M') }} </td> 
-                {% set contact_details = event.contact[:3] + "-" + event.contact[3:] if event.contact[:2] == "05" else "@" + event.contact %}
-                {% if contact_details[0] =="@"%}
-                <td> <a class="ben_ashamen"> {{contact_details}} </a> </td>
+                <td>
+                    <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
+                    target="_blank"> {{ event.address }}
+                    </a>
+                </td>
+                <td> {{ event.event_date.strftime('%d.%m') }} </td>
+                <td> {{ event.time.strftime('%H:%M') }} </td>
+                <td> {{ event.price_range }} </td>
+                {% with contact = event.contact %}
+                {% if contact[:2] == "05" %}
+                <td> {{ contact[:3] + "-" + contact[3:] }} </td>
+                {% elif ".com" not in contact  %}
+                <td>
+                    <a class="ben_ashamen" href="https://www.instagram.com/{{ event.contact }}" 
+                    target="_blank"> {{ "@" + event.contact }}
+                    </a>
+                </td>
                 {% else %}
-                <td>{{ contact_details }}</td>
+                <td> {{ contact }} </td>
                 {% endif %}
-                    <form action="{{ url_for('main.delete_event_by_id', id=event.id) }}" method="POST">
-                        <button type="submit" class="delete_button">X</button>
-                    </form>      
-                 </td>      
+                {% endwith %}
             </tr>
-    {% endfor %}
+        {% endfor %}
     </table>
+    </div>
     {% endif %}
     {% endwith %}
     <br> <br> <br> <br>
     <a href='/new_event'> 
         <button class="button3"> Add </button>
     </a>
-
 </body>
 
