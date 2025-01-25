@@ -9,7 +9,7 @@
     <div class = "corner_links">
         <a href="/"> Homepage </a>
     </div>
-    <br> 
+    <br> <br>
     {% with message = get_flashed_messages() %}
     {% if message %}
         <h2 class ="error"> {{ message }} </h2> 
@@ -28,8 +28,8 @@
             <th>Address</th>
             <th>Date</th>
             <th>Time</th>
-            <th>Price Range</th>
             <th>Contact</th>
+            <th>Actions</th>
         </tr>
         {% for event in events %}
             <tr>
@@ -42,7 +42,6 @@
                 </td>
                 <td> {{ event.date.strftime('%d.%m') }} </td>
                 <td> {{ event.time.strftime('%H:%M') }} </td>
-                <td> {{ event.price_range }} </td>
                 {% with contact = event.contact %}
                 {% if contact[:2] == "05" %}
                 <td> {{ contact[:3] + "-" + contact[3:] }} </td>
@@ -56,6 +55,11 @@
                 <td> {{ contact }} </td>
                 {% endif %}
                 {% endwith %}
+                <td> 
+                    <form action="{{ url_for('main.delete_event_by_id', id=event.id) }}" method="POST">
+                        <button type="submit" class="delete_button"> X </button>
+                    </form>      
+                </td>
             </tr>
         {% endfor %}
     </table>

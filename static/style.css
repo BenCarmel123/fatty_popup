@@ -21,6 +21,7 @@
     background: var(--Schemes-Primary, #ab6ddd);
     font-family: Varela Round;
     transition: all 0.1s ease-in-out;
+    font-size: inherit;
 }
 
 .button3:hover {
@@ -119,7 +120,10 @@
 
 @keyframes entry
 {
-    0% {color:#222020d1; top:200px;}
+    0% {color:#242123d1; top:200px;}
+    25% {color:#3d343ad1; top:100px;}
+    50% {color:#5c4b5fd1; top:50px;}
+    75% {color:#7a5f7fd1; top:25px;}
     100% {color:#ab6ddd; top:0px;}
 }
 
@@ -129,7 +133,7 @@
     font-size: 60px;
     font-weight: 700;
     animation-name: entry;
-    animation-duration: 2.7s;
+    animation-duration: 2s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;  
 }
@@ -251,7 +255,7 @@
 }
 
 .button_container {
-    gap: 20px;
+    gap: 35px;
     width: 300px;
     margin: 0 auto;
     display: grid;
