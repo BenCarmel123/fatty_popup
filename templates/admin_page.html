@@ -40,7 +40,7 @@
                     target="_blank"> {{ event.address }}
                     </a>
                 </td>
-                <td> {{ event.event_date.strftime('%d.%m') }} </td>
+                <td> {{ event.date.strftime('%d.%m') }} </td>
                 <td> {{ event.time.strftime('%H:%M') }} </td>
                 <td> {{ event.price_range }} </td>
                 {% with contact = event.contact %}
