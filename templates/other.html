@@ -35,7 +35,7 @@
                         <td> {{ event.event_type }} </td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
-                            target="_blank" class="ben_ashamen"> {{ event.address }}
+                            target="_blank" class="insta_link"> {{ event.address }}
                             </a>
                         </td>
                         <td> {{ event.date.strftime('%d.%m') }} </td>
@@ -46,7 +46,7 @@
                         <td> {{ contact[:3] + "-" + contact[3:] }} </td>
                         {% elif ".com" not in contact  %}
                         <td>
-                            <a class="ben_ashamen" href="https://www.instagram.com/{{ event.contact }}" 
+                            <a class="insta_link" href="https://www.instagram.com/{{ event.contact }}" 
                             target="_blank"> {{ "@" + event.contact }}
                             </a>
                         </td>
