@@ -44,23 +44,23 @@ def delete_event_by_id(id):
 def pop_list():
     date_a = datetime.now().date()
     date_b = (datetime.now() + timedelta(days=7)).date()
-    event_count = Event.query.filter(Event.event_date >= date_a, Event.event_date <= date_b).count()
+    event_count = Event.query.filter(Event.date >= date_a, Event.date <= date_b).count()
     return render_template('pop_list.html', event_count=event_count)
 
 @main.route('/ramen_list')
 def ramen_list():
-    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all().sort(key=lambda x: x.event_date)
+    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all().sort(key=lambda x: x.date)
     return render_template('ramen.html', ramen_list=ramen_list)
 
 @main.route('/wine_list')
 def wine_list():
-    wine_list = Event.query.filter(Event.event_type.ilike('wine')).all().sort(key=lambda x: x.event_date)
+    wine_list = Event.query.filter(Event.event_type.ilike('wine')).all().sort(key=lambda x: x.date)
     return render_template('wine.html' , wine_list=wine_list)
     
 @main.route('/other_list')
 def other_list():
-    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all().sort(key=lambda x: x.event_date)
-    wine_list = Event.query.filter(Event.event_type.ilike('wine')).all().sort(key=lambda x: x.event_date)
+    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all().sort(key=lambda x: x.date)
+    wine_list = Event.query.filter(Event.event_type.ilike('wine')).all().sort(key=lambda x: x.date)
     other_list = [event for event in Event.query.all() if event not in ramen_list and event not in wine_list]
     return render_template('other.html', other_list=other_list)
 
@@ -82,13 +82,13 @@ def event_form():
         event_type = request.form['event_type']
         description = request.form['description']
         address = request.form['address']
-        date = datetime.strptime(request.form['event_date'], "%Y-%m-%d").date()
+        date = datetime.strptime(request.form['date'], "%Y-%m-%d").date()
         time = datetime.strptime(request.form['time'], "%H:%M").time()
         price_range = request.form['price_range']
         contact = request.form['contact']
         exists = Event.query.filter(
             Event.address.ilike(address.strip()),
-            Event.event_date == event_date,
+            Event.date == date,
             Event.time == time
         ).first()
         if exists:

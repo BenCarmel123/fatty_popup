@@ -126,8 +126,8 @@
 .title
 {
     font-family: 'Varela Round', sans-serif;
-    font-size: 70px;
-    font-weight: bold;
+    font-size: 60px;
+    font-weight: 700;
     animation-name: entry;
     animation-duration: 2.7s;
     background: linear-gradient(to right, #ab6ddd, #6823a1);
@@ -135,6 +135,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+    -webkit-text-stroke-width: thin;
 }
 
 
