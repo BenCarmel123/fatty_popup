@@ -21,7 +21,7 @@ def admin_login():
             return redirect('/admin_page')
         else:
             flash("Incorrect Username and/or Password, please try again")
-            return render_template('admin_login.html', inpute_username=username)
+            return render_template('admin_login.html', input_username=username)
 
 @main.route('/admin_page', methods=['GET', 'POST'])
 def admin_page():
