@@ -49,19 +49,19 @@ def pop_list():
 
 @main.route('/ramen_list')
 def ramen_list():
-    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all().sort(key=lambda x: x.date)
+    ramen_list = sorted(Event.query.filter(Event.event_type.ilike('ramen')).all(), key=lambda x: x.date)
     return render_template('ramen.html', ramen_list=ramen_list)
 
 @main.route('/wine_list')
 def wine_list():
-    wine_list = Event.query.filter(Event.event_type.ilike('wine')).all().sort(key=lambda x: x.date)
+    wine_list = sorted(Event.query.filter(Event.event_type.ilike('wine')).all(), key=lambda x: x.date)
     return render_template('wine.html' , wine_list=wine_list)
     
 @main.route('/other_list')
 def other_list():
-    ramen_list = Event.query.filter(Event.event_type.ilike('ramen')).all().sort(key=lambda x: x.date)
-    wine_list = Event.query.filter(Event.event_type.ilike('wine')).all().sort(key=lambda x: x.date)
-    other_list = [event for event in Event.query.all() if event not in ramen_list and event not in wine_list]
+    other_list = Event.query.filter(
+    ~Event.event_type.ilike('ramen'),
+    ~Event.event_type.ilike('wine')).order_by(Event.date).all()
     return render_template('other.html', other_list=other_list)
 
 
@@ -102,7 +102,7 @@ def event_form():
                 event_type=event_type,
                 description=description,
                 address=address,
-                date=event,
+                date=date,
                 time=time,
                 price_range=price_range,
                 contact=contact
