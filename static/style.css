@@ -303,7 +303,7 @@
 }
 #fatty.title
 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .ben_ashamen
@@ -534,7 +534,7 @@ th
     text-align: center; 
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bold;
-    background-color: #e2fbff;
+    background-color: #ab6ddd;
 }
 
 td
