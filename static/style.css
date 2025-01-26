@@ -9,10 +9,9 @@
 
 .button3
 {
-    letter-spacing: .075rem;
+    letter-spacing: .05rem;
     color: white;
     font-weight: bold;
-    letter-spacing: .15rem;
     cursor: pointer;
     width: 100px;
     height: 60px;
@@ -94,6 +93,7 @@
 
 .corner_links 
 {
+    letter-spacing: .1rem;
     display: flex;
     justify-content: center;
     align-items: center;
