@@ -10,6 +10,7 @@
     <div class = "corner_links">
         <a href="/"> Homepage </a>
     </div>
+    <br> <br>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul>
@@ -24,12 +25,12 @@
         <div class="container_newevent">
             <div class="item1">
                 <label for="host" class="form_field"> Host </label>
-                <input class ="text" type="text" id="host" name="host" maxlength="20" 
+                <input class ="text" type="text" id="host" name="host" maxlength="30" 
                        value="{{ form_data.host if form_data else '' }}" required >
             </div>
             <div class="item2">
                 <label for="event_name" class="form_field"> Event Name </label>
-                <input class ="text" type="text" id="event_name" name="event_name" maxlength="30" 
+                <input class ="text" type="text" id="event_name" name="event_name" maxlength="40" 
                        value="{{ form_data.event_name if form_data else '' }}" required >
             </div>
                 <label for="event_type" class="form_field"> What's the event? </label>
