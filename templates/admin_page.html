@@ -27,8 +27,6 @@
             <th>Event</th>
             <th>Address</th>
             <th>Date</th>
-            <th>Time</th>
-            <th>Contact</th>
             <th>Actions</th>
         </tr>
         {% for event in events %}
@@ -37,22 +35,10 @@
                 <td> {{ event.event_type }} </td>
                 <td>
                     <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
-                    target="_blank"> {{ event.address }}
+                    target="_blank" class="insta_link"> {{ event.address }}
                     </a>
                 </td>
                 <td> {{ event.date.strftime('%d.%m') }} </td>
-                <td> {{ event.time.strftime('%H:%M') }} </td>
-                {% with contact = event.contact %}
-                {% if contact[:2] == "05" %}
-                <td> {{ contact[:3] + "-" + contact[3:] }} </td>
-                {% elif ".com" not in contact  %}
-                <td>
-                    <a class="ben_ashamen" href="https://www.instagram.com/{{ event.contact }}" 
-                    target="_blank"> {{ "@" + event.contact }}
-                    </a>
-                </td>
-                {% else %}
-                <td> {{ contact }} </td>
                 {% endif %}
                 {% endwith %}
                 <td> 
