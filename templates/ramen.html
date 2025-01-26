@@ -23,10 +23,10 @@
                 <tr>
                     <th>Host</th>
                     <th>Event</th>
-                    <th>Address</th>
+                    <th>Location</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <th>Price Range</th>
+                    <th>Per Dish</th>
                     <th>Contact</th>
                 </tr>
                 {% for event in ramen_list %}
@@ -35,7 +35,7 @@
                         <td> {{ event.event_type }} </td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
-                            target="_blank"> {{ event.address }}
+                            target="_blank" class="insta_link"> {{ event.address }}
                             </a>
                         </td>
                         <td> {{ event.date.strftime('%d.%m') }} </td>
@@ -47,7 +47,7 @@
                         {% elif ".com" not in contact  %}
                         <td>
                             <a class="ben_ashamen" href="https://www.instagram.com/{{ event.contact }}" 
-                            target="_blank"> {{ "@" + event.contact }}
+                            target="_blank" class="insta_link"> {{ event.contact }}
                             </a>
                         </td>
                         {% else %}
