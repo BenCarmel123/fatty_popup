@@ -399,20 +399,21 @@ td a.insta_link:hover
     align-items: center;
     justify-content: center;
     gap: 10px;
-    list-style-image: url('../static/images/arrow.png');
-    list-style: none;
 }
 
 .pop_event_details
 {
-    background: #b1b1b1;
-    font-size: medium;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    justify-content: space-between;
+    list-style: none; /* Removes default marker */
+    appearance: none; /* Removes native arrow */
+    cursor: pointer;
+    background-image: url('../static/images/arrow-right.png'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 16px 16px;
+    padding-left: 25px; /* Space for the arrow */
 }
 
 input::placeholder
