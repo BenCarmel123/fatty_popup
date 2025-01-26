@@ -31,13 +31,13 @@ def valid_email(email):
 
 def valid_contact(contact):
     if contact[0] == "@":
-        if valid_instagram(contact):
+        if valid_instagram(contact) == []:
             return True
     elif "@" in contact:
-        if valid_email(contact):
+        if valid_email(contact) == []:
             return True
     else:
-        if valid_phone(contact):
+        if valid_phone(contact) == []:
             return True
     return False
 
@@ -69,6 +69,5 @@ def validate_event(host, event_name, event_type, description, address, date, tim
     if not price_range:
         res += "Price range" + "\n"
     if not contact or not valid_contact(contact):
-        res += "Contact Details" + "\n"
-    
+        res += "Contact Details" 
     return res

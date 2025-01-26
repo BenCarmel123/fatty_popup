@@ -342,8 +342,7 @@
     display: flex;
     text-align: left; 
     justify-content: center;
-    flex-direction: column; 
-    width: 40%; 
+    flex-direction: column;
     margin: auto;
     margin-top: 20px;
 }
@@ -376,11 +375,11 @@ ol
 {
     font-size: larger; 
 }
-.
+
 td.insta_link
 {
     font-size: 16px;
-    font-weight: bolder;
+    font-weight: bold;
     text-decoration: none;
     font-family: 'Varela Round', sans-serif;
     color: darkgray;
