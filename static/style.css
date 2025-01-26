@@ -401,6 +401,8 @@ td a.insta_link:hover
     gap: 10px;
     margin-top: 20px;
     color: darkgray;
+    background: url('/static/images/down-arrow.png') no-repeat;
+    list-style: none;
 }
 
 .event_details:hover
@@ -413,8 +415,7 @@ td a.insta_link:hover
 
 .pop_event_details
 {
-    background: url('/static/images/down-arrow.png') no-repeat;
-    list-style: none;
+    background: #333;
     font-size: small;
     display: flex;
     flex-direction: column;
