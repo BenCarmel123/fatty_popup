@@ -399,8 +399,7 @@ td a.insta_link:hover
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 15px;
-    background: url('/static/images/down-arrow.png') no-repeat;
+    list-style-image: url('../static/images/arrow.png');
     list-style: none;
 }
 
