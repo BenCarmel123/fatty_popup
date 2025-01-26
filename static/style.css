@@ -129,7 +129,7 @@
 
 .title_container
 {
-     margin-bottom: -30px; 
+     margin-bottom: -20px; 
 }
 .title
 {
@@ -309,7 +309,7 @@
     justify-content: center;
     align-items: center;
     font-size: 15px;
-    margin-top: -40px;
+    margin-top: -30px;
     gap: 7px;
     animation: fadeIn 1s ease-in 1s forwards;
 }
@@ -356,7 +356,6 @@
 
 details summary {
     appearance: none; /* Remove the default arrow */
-    list-style: none; /* Remove any default markers */
     cursor: pointer;
     background-image: url('../static/images/arrow.png'); /* Custom arrow */
     background-repeat: no-repeat;
@@ -534,11 +533,14 @@ th
     background-color: #abc7ff;
 }
 
-td {
+td
+{
+    font-style: italic;
     border: 1px solid darkgray; 
     padding: 10px; 
     text-align: center; 
-    background-color: white;
+    background-image: radial-gradient(#f9f9f9f4 9%, #e9edcc);
+    letter-spacing: .1rem;
 }
 
 textarea 
