@@ -47,7 +47,8 @@
                         <td> {{ contact[:3] + "-" + contact[3:] }} </td>
                         {% elif ".com" not in contact  %}
                         <td>
-                            <a href="https://www.instagram.com/{{ event.contact }}" 
+                            <a href="https://www.instagram.com/{{ event.contact[1:]
+                             if event.contact.startswith('@') else event.contact }}" 
                             target="_blank" class="insta_link"> {{ event.contact }}
                             </a>
                         </td>
@@ -57,15 +58,14 @@
                         {% endwith %}
                         <td> 
                             <details> 
-                                <summary data-description = "{{event.description}}"></summary>
+                                <summary data-description = "{{event.description}}" ></summary>
                             </details>
                         </td>
                     </tr>
                 {% endfor %}
             </table>
             <div class="event_details_container">
-                <p class="event_details"> 
-                </p>   
+                <p class="event_details"></p>   
                 <button id="close_pop"> X </button>
             </div>
         </div>

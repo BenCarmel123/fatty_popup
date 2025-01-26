@@ -23,7 +23,13 @@
                 </a>
             </div>
         </div>
-        <br> <br> <br> <br> 
+        <br> <br> 
+        {% if event_count>3 %}
         <h4 class="pop_counter"> {{ event_count }} pop-ups for you to check out this week </h4>
+        {% elif event_count==0 %}
+        <h4 class="pop_counter"> No upcoming pop-ups </h4>
+        {% else %}
+        <h4 class="pop_counter"> Check out the upcoming pop-ups </h4>
+        {% endif %}
     </div>
 </body>
