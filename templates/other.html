@@ -56,13 +56,19 @@
                         {% endif %}
                         {% endwith %}
                         <td> 
-                            <details class="event_details"> 
-                                <summary class="pop_event_details"> {{ event.description }} </summary>
+                            <details> 
+                                <summary> Details </summary>
                             </details>
                         </td>
                     </tr>
                 {% endfor %}
             </table>
+            <div class="event_details_container">
+                <p class="event_details"> 
+                {{event.description}} 
+                </p>   
+                <button class="delete_button" id="close_pop"> X </button>
+            </div>
         </div>
         {% endif %}
             {% endwith %}
