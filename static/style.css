@@ -200,6 +200,27 @@
     cursor: pointer;
 }
 
+.close_pop
+{
+    position: fixed;
+    top: 10px; 
+    left: 10px; 
+    height: 30px;
+    width: 30px;
+    color:black;
+    background-color: darkgray;
+    background-image: url('../static/images/delete.png');
+    border: none;
+    border-radius:7px;
+    z-index: 1001;
+}
+
+.close_pop:hover
+{
+    background-color: #ab6ddd;
+    cursor: pointer;
+}
+
 .admin_panel
 {
     text-align: center;
@@ -370,6 +391,7 @@ details summary {
     align-items: center;
     z-index: 1000;
     padding: 20px;
+    overflow: hidden;
 }
 
 .event_details
