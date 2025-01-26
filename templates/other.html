@@ -28,6 +28,7 @@
                     <th>Time</th>
                     <th>Per Dish</th>
                     <th>Contact</th>
+                    <th>Details</th>
                 </tr>
                 {% for event in other_list %}
                     <tr>
@@ -54,6 +55,11 @@
                         <td> {{ contact }} </td>
                         {% endif %}
                         {% endwith %}
+                        <td> 
+                            <details> 
+                                {{ event.description }}
+                            </details>
+                        </td>
                     </tr>
                 {% endfor %}
             </table>
