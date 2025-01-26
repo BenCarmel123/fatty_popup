@@ -21,7 +21,7 @@
     background: var(--Schemes-Primary, #ab6ddd);
     font-family: Varela Round;
     transition: all 0.1s ease-in-out;
-    font-size: large;
+    font-size: 16px;
 }
 
 .button3:hover {
@@ -61,11 +61,16 @@
 }
  .pop_l
  {
-    
+    font-style: italic;
     animation: fadeIn 4s;
     text-decoration: None;
     color: #ab6ddd;
     font-size: 25px;
+ }
+
+ h2 .pop_list_container
+ {
+    font-style: italic;
  }
 
 .pop_l:hover
@@ -127,6 +132,10 @@
     100% {color:#ab6ddd; top:0px;}
 }
 
+.title_container
+{
+     margin-bottom: -40px; 
+}
 .title
 {
     font-style: italic;
@@ -184,20 +193,19 @@
     cursor: pointer;
 }
 
-#close_pop {
+.close_pop {
     position: absolute; /* Position relative to the parent container */
     top: 10px; /* Distance from the top of the .event_details_container */
     left: 10px; /* Distance from the left of the .event_details_container */
     height: 30px;
     width: 30px;
-    color: black;
+    color: white;
     background-color: darkgray;
     background-image: url('../static/images/delete.png');
     border: none;
-    border-radius: 7px;
+    border-radius: 12px;
     z-index: 1001; /* Ensures it is above other elements within the container */
 }
-
 
 .close_pop:hover
 {
@@ -299,12 +307,6 @@
         }
 }
 
-.title_container .title:not(:last-child)
- {
-    margin-bottom: -40px; 
-}
-
-
 .ben_ashamen
 {
     opacity: 0;
@@ -371,10 +373,10 @@ details summary {
 .event_details_container {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     position: fixed;
-    width: 60vw; 
-    height: 30vh; 
+    width: 50vw; 
+    height: 50vh; 
     background-color: rgba(129, 126, 126, 0.434);
-    color: #fff;
+    color: #1a1818;
     display: none; 
     justify-content: center;
     align-items: center;
@@ -388,7 +390,7 @@ details summary {
 
 .event_details
  {
-    margin-top: 70%;
+    margin-top: -70%;
     font-size: medium;
     font-family: 'Varela Round', sans-serif;
     color: white;
