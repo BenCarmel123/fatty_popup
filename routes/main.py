@@ -93,7 +93,7 @@ def event_form():
         ).first()
         if exists:
             flash("Event already registered")
-            return redirect('/admin_page', my_events=Event.query.all(), first_name='Ben')
+            return redirect('/admin_page')
         message = validate_event(host,event_name,event_type, description, address, date, time, price_range, contact)
         if message == "":
             new_event = Event(

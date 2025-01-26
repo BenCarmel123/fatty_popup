@@ -6,7 +6,7 @@ class Event(db.Model):
     __tablename__ = 'event'
     id = db.Column(db.Integer, primary_key=True)
     host = db.Column(db.String(30), nullable=False)
-    event_name = db.Column(db.String(20), nullable=False)
+    event_name = db.Column(db.String(40), nullable=False)
     event_type = db.Column(db.String(20), nullable=False)
     description = db.Column(db.Text, nullable=False)
     address = db.Column(db.String(100), nullable=False)
