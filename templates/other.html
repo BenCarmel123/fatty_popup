@@ -26,7 +26,7 @@
                     <th>Location</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <th>Price range per dish</th>
+                    <th>Per Dish</th>
                     <th>Contact</th>
                 </tr>
                 {% for event in other_list %}
@@ -46,8 +46,8 @@
                         <td> {{ contact[:3] + "-" + contact[3:] }} </td>
                         {% elif ".com" not in contact  %}
                         <td>
-                            <a class="insta_link" href="https://www.instagram.com/{{ event.contact }}" 
-                            target="_blank"> {{ "@" + event.contact }}
+                            <a href="https://www.instagram.com/{{ event.contact }}" 
+                            target="_blank" class="insta_link"> {{ "@" + event.contact }}
                             </a>
                         </td>
                         {% else %}

@@ -34,11 +34,11 @@ def delete_event_by_id(id):
     event = Event.query.get(id)
     if not event:
         flash("Event not found")
-        return render_template('admin_page.html', events=Event.query.all())
+        return render_template('admin_page.html', events=Event.query.all(), first_name='Ben')
     db.session.delete(event)
     db.session.commit()
     flash("Event deleted successfully")
-    return render_template('admin_page.html', events=Event.query.all())
+    return render_template('admin_page.html', events=Event.query.all(), first_name='Ben')
 
 @main.route('/pop_list')
 def pop_list():
@@ -93,7 +93,7 @@ def event_form():
         ).first()
         if exists:
             flash("Event already registered")
-            return redirect('/admin_page')
+            return redirect('/admin_page', my_events=Event.query.all(), first_name='Ben')
         message = validate_event(host,event_name,event_type, description, address, date, time, price_range, contact)
         if message == "":
             new_event = Event(
@@ -109,7 +109,7 @@ def event_form():
             )
             db.session.add(new_event)
             db.session.commit()
-            return render_template('admin_page.html', my_events=Event.query.all())
+            return render_template('admin_page.html', my_events=Event.query.all(), first_name='Ben')
         else:
             flash(message)
             return render_template('new_event.html', form_data=request.form)
@@ -121,8 +121,8 @@ def delete_my_event_by_id(id):
     event = Event.query.get(id)
     if not event:
         flash("Event not found")
-        return render_template('admin_page.html')
+        return render_template('admin_page.html', my_events=Event.query.all(), first_name='Ben')
     db.session.delete(event)
     db.session.commit()
     flash("Event deleted successfully")
-    return render_template('admin_page.html', my_events=Event.query.all())
+    return render_template('admin_page.html', my_events=Event.query.all(), first_name='Ben')
