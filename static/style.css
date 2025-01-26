@@ -21,7 +21,7 @@
     background: var(--Schemes-Primary, #ab6ddd);
     font-family: Varela Round;
     transition: all 0.1s ease-in-out;
-    font-size: inherit;
+    font-size: large;
 }
 
 .button3:hover {
@@ -376,7 +376,7 @@ ol
 {
     font-size: larger; 
 }
-
+.
 td.insta_link
 {
     font-size: 16px;
