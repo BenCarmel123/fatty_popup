@@ -65,7 +65,7 @@
     animation: fadeIn 4s;
     text-decoration: None;
     color: #ab6ddd;
-    font-size: 30px;
+    font-size: 25px;
  }
 
 .pop_l:hover
@@ -353,7 +353,7 @@ details summary {
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 16px 16px;
-    padding-left: 25px; /* Space for the arrow */
+    padding-left: 25px;
     font-weight: bold;
 }
 
@@ -361,8 +361,8 @@ details summary {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     background-color: rgba(150, 150, 150, 0.8);
     color: #fff;
     display: none; 
@@ -374,7 +374,7 @@ details summary {
 
 .event_details
  {
-    margin-top: 400px;
+    margin-top: 50%;
     background-color: #ab6ddd40;
     border-radius: 22px;
     max-width: 600px;
