@@ -9,6 +9,7 @@
 
 .button3
 {
+    letter-spacing: .1rem;
     color: white;
     font-weight: bold;
     letter-spacing: .15rem;
@@ -244,6 +245,7 @@
 
 .password_container button
  {
+    border-color: radial-gradient(#f9f9f9 9%, #e9edcc);
     background-size: 193%;
     margin-top: 4px;
     border-radius: 15px;
@@ -303,7 +305,7 @@
 }
 #fatty.title
 {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 .ben_ashamen
