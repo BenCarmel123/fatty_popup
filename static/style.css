@@ -21,7 +21,7 @@
     background: var(--Schemes-Primary, #ab6ddd);
     font-family: Varela Round;
     transition: all 0.1s ease-in-out;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .button3:hover {
@@ -141,6 +141,7 @@
     animation-duration: 1.3s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;  
+    margin-bottom: 5px;
 }
 
 .corner_links  a 
@@ -370,6 +371,7 @@ details summary {
 
 .event_details_container
  {
+    display: flex;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     position: fixed;
     width: 50vw; 
@@ -388,7 +390,6 @@ details summary {
 
 .event_details
  {
-    margin-top: -70%;
     font-size: medium;
     font-family: 'Varela Round', sans-serif;
     color: white;
