@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () =>
    const arrow = document.querySelectorAll('summary');
    const detailsBlock = document.querySelector('.event_details_container');
    const pop = document.querySelector('.event_details');
-   const close = document.querySelector('.close_pop');
+   const close = document.getElementById('close_pop');
    detailsBlock.style.display = 'none';
    function showDetails(clickEvent)
    {

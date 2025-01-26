@@ -374,8 +374,9 @@ details summary {
 
 .event_details
  {
-    background-color: #333; 
-    border-radius: 10px;
+    margin-top: 400px;
+    background-color: #ab6ddd40;
+    border-radius: 22px;
     max-width: 600px;
     text-align: center;
  }
