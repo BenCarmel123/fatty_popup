@@ -10,61 +10,65 @@
         <div class="corner_links">
             <a href="/"> Homepage </a>
         </div>
-        <br> <br>
+        <br><br>
         {% with ramen_list = ramen_list %}
         {% if not ramen_list %}
-        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
-        <h4 class="pop_counter"> No upcoming ramen pop-ups </h4>
+        <div class="no_ramen_message">
+            <h4 class="pop_counter"> No upcoming ramen pop-ups </h4>
+        </div>
         {% else %}
-        <h1> Ramen Pop-ups </h1>
-        <br> <br>
+        <h1 class="table_title"> Ramen Pop-ups </h1>
         <div class="table_container">
             <table>
-                <tr>
-                    <th>Host</th>
-                    <th>Event</th>
-                    <th>Location</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Per Dish</th>
-                    <th>Contact</th>
-                </tr>
-                {% for event in ramen_list %}
+                <thead>
                     <tr>
-                        <td> {{ event.host }} </td>
-                        <td> {{ event.event_type }} </td>
+                        <th>Host</th>
+                        <th>Event</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Per Dish</th>
+                        <th>Contact</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in ramen_list %}
+                    <tr>
+                        <td>{{ event.host }}</td>
+                        <td>{{ event.event_type }}</td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
-                            target="_blank" class="insta_link"> {{ event.address }}
-                            </a>
+                               target="_blank" class="insta_link">{{ event.address }}</a>
                         </td>
-                        <td> {{ event.date.strftime('%d.%m') }} </td>
-                        <td> {{ event.time.strftime('%H:%M') }} </td>
-                        <td> {{ event.price_range }} </td>
-                        {% with contact = event.contact %}
-                        {% if contact[:2] == "05" %}
-                        <td> {{ contact[:3] + "-" + contact[3:] }} </td>
-                        {% elif ".com" not in contact  %}
+                        <td>{{ event.date.strftime('%d.%m') }}</td>
+                        <td>{{ event.time.strftime('%H:%M') }}</td>
+                        <td>{{ event.price_range }}</td>
                         <td>
-                            <a class="ben_ashamen" href="https://www.instagram.com/{{ event.contact }}" 
-                            target="_blank" class="insta_link"> {{ event.contact }}
-                            </a>
+                            {% with contact = event.contact %}
+                            {% if contact[:2] == "05" %}
+                                {{ contact[:3] + "-" + contact[3:] }}
+                            {% elif ".com" not in contact %}
+                                <a href="https://www.instagram.com/{{ event.contact }}" 
+                                   target="_blank" class="insta_link">{{ event.contact }}</a>
+                            {% else %}
+                                {{ contact }}
+                            {% endif %}
+                            {% endwith %}
                         </td>
-                        {% else %}
-                        <td> {{ contact }} </td>
-                        {% endif %}
-                        {% endwith %}
-                        <td> 
-                            <details class="event_details"> 
-                                <summary class="pop_event_details"> {{ event.description }} </summary>
-                                </details>
-                            </td>
+                        <td>
+                            <details class="event_details">
+                                <summary class="pop_event_details" data-description="{{ event.description }}">
+                                    Details
+                                </summary>
+                            </details>
                         </td>
                     </tr>
-                {% endfor %}
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
         {% endif %}
         {% endwith %}
-        </body>
+    </body>
 </html>

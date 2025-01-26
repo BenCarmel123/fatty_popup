@@ -130,7 +130,6 @@
 .title
 {
     font-family: 'Varela Round', sans-serif;
-    font-size: 60px;
     font-weight: 700;
     animation-name: entry;
     animation-duration: 1.3s;
@@ -387,17 +386,14 @@ details[open] summary {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-
-
 body 
 {
     text-align: center;   
     font-family: Varela Round;      
-    background-image: radial-gradient(#fff583 9%, #ffffb4);
+    background-image: radial-gradient(#f9f9f9 9%, #e9edcc);
     -webkit-font-smoothing: antialiased;
     letter-spacing: .2rem;
 }
-
 
 h2
 {
