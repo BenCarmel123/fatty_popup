@@ -31,7 +31,7 @@
 .table_container
 {
     overflow-x: auto;
-    margin-left: -200px;;
+    margin-left: -200px;
 }
 
 .host_list
@@ -165,22 +165,6 @@
     font-size: large;
     transform: scale(1.025);
 }
-
-.future_plans
-{
-    position: center;
-    text-decoration: none;
-    font-size: x-large;
-}
-
-.sign_up_form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    max-width: 700px;
-    margin: 40px auto;
-}
-
 
 .single_button_container {
     display: flex;
@@ -321,13 +305,18 @@
         }
 }
 
+.title_container .title:not(:last-child) {
+    margin-bottom: 5px; 
+}
+
+
 .ben_ashamen
 {
     opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 15px;
     margin-top: -45px;
     gap: 7px;
     animation: fadeIn 1s ease-in 1s forwards;
@@ -385,6 +374,7 @@ details summary {
 }
 
 .event_details_container {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     position: fixed;
     width: 50vw; /* 50% of the viewport width */
     height: 50vh; /* 50% of the viewport height */
