@@ -399,24 +399,15 @@ td a.insta_link:hover
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
-    color: darkgray;
+    margin-top: 15px;
     background: url('/static/images/down-arrow.png') no-repeat;
     list-style: none;
 }
 
-.event_details:hover
-{
-    cursor: pointer;
-    background-color: #ab6ddd;
-    border-radius: 10px;
-    padding: 10px;
-}
-
 .pop_event_details
 {
-    background: #333;
-    font-size: small;
+    background: #b1b1b1;
+    font-size: medium;
     display: flex;
     flex-direction: column;
     align-items: center;
