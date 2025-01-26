@@ -376,7 +376,7 @@ ol
     font-size: larger; 
 }
 
-td.insta_link
+td a.insta_link
 {
     font-size: 12px;
     font-weight: bold;
@@ -385,11 +385,43 @@ td.insta_link
     color: darkgray;
 }
 
-td.insta_link:hover
+td a.insta_link:hover
 {
     text-decoration: underline;
     cursor: pointer;
     color: #ab6ddd;
+}
+
+.event_details
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: darkgray;
+}
+
+.event_details:hover
+{
+    cursor: pointer;
+    background-color: #ab6ddd;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.pop_event_details
+{
+    background: url('/static/images/down-arrow.png') no-repeat;
+    list-style: none;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 input::placeholder
@@ -405,7 +437,7 @@ input[type="text"]
     max-width: 300px;
     padding: 10px;
     font-size: 16px;
-    font-family: font-family: Varela Round;
+    font-family: Varela Round;
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;

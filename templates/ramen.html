@@ -54,6 +54,12 @@
                         <td> {{ contact }} </td>
                         {% endif %}
                         {% endwith %}
+                        <td> 
+                            <details class="event_details"> 
+                                <summary class="pop_event_details"> {{ event.description }} </summary>
+                                </details>
+                            </td>
+                        </td>
                     </tr>
                 {% endfor %}
             </table>
