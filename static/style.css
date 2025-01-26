@@ -141,7 +141,6 @@
     animation-duration: 1.3s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;  
-    margin-bottom: 5px;
 }
 
 .corner_links  a 
@@ -302,7 +301,7 @@
             opacity: 1;
         }
 }
-#fatty .title
+#fatty.title
 {
     margin-bottom: 10px;
 }
@@ -369,23 +368,23 @@ details summary {
     padding-left: 25px; /* Space for the arrow */
 }
 
-.event_details_container
- {
+.event_details_container {
     display: flex;
+    flex-direction: column; /* Optional: Maintain vertical stacking for children */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    width: 50vw; 
-    height: 50vh; 
+    position: fixed; /* Position relative to the viewport */
+    width: 50vw;
+    height: 50vh;
     background-color: rgba(129, 126, 126, 0.434);
     color: #1a1818;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center other content */
+    align-items: center; /* Center other content */
     z-index: 1000;
     padding: 20px;
     overflow: hidden;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .event_details
@@ -535,7 +534,7 @@ th
     text-align: center; 
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bold;
-    background-color: #dfeaff;
+    background-color: #e2fbff;
 }
 
 td
@@ -544,7 +543,7 @@ td
     border: 1px solid darkgray; 
     padding: 10px; 
     text-align: center; 
-    background-image: radial-gradient(#f8f7e2f4 9%, #f9faf6);
+    background-image: radial-gradient(#fffffff4 9%, #f9faf6);
     letter-spacing: .1rem;
 }
 
