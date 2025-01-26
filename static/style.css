@@ -129,6 +129,7 @@
 
 .title
 {
+    font-style: italic;
     font-size: 50px;
     font-family: 'Varela Round', sans-serif;
     font-weight: 700;
@@ -137,13 +138,6 @@
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;  
 }
-
-.title_container
-{
-    gap: 10px;
-}
-
-
 
 .corner_links  a 
 {
@@ -190,20 +184,20 @@
     cursor: pointer;
 }
 
-.close_pop
-{
-    position: fixed;
-    top: 10px; 
-    left: 10px; 
+#close_pop {
+    position: absolute; /* Position relative to the parent container */
+    top: 10px; /* Distance from the top of the .event_details_container */
+    left: 10px; /* Distance from the left of the .event_details_container */
     height: 30px;
     width: 30px;
-    color:black;
+    color: black;
     background-color: darkgray;
     background-image: url('../static/images/delete.png');
     border: none;
-    border-radius:7px;
-    z-index: 1001;
+    border-radius: 7px;
+    z-index: 1001; /* Ensures it is above other elements within the container */
 }
+
 
 .close_pop:hover
 {
@@ -305,8 +299,9 @@
         }
 }
 
-.title_container .title:not(:last-child) {
-    margin-bottom: 5px; 
+.title_container .title:not(:last-child)
+ {
+    margin-bottom: -40px; 
 }
 
 
@@ -329,7 +324,7 @@
 
 .insta_link
 {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bolder;
     text-decoration: none;
     font-family: 'Varela Round', sans-serif;
@@ -363,22 +358,22 @@
 }
 
 details summary {
-    appearance: none;
+    appearance: none; /* Remove the default arrow */
+    list-style: none; /* Remove any default markers */
     cursor: pointer;
-    background-image: url('../static/images/arrow-right.png'); /* Custom arrow */
+    background-image: url('../static/images/arrow.png'); /* Custom arrow */
     background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 16px 16px;
-    padding-left: 25px;
-    font-weight: bold;
+    background-position: left center; /* Align the arrow to the left */
+    background-size: 16px 16px; /* Adjust the arrow size */
+    padding-left: 25px; /* Space for the arrow */
 }
 
 .event_details_container {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     position: fixed;
-    width: 50vw; /* 50% of the viewport width */
-    height: 50vh; /* 50% of the viewport height */
-    background-color: rgba(150, 150, 150, 0.8);
+    width: 60vw; 
+    height: 30vh; 
+    background-color: rgba(129, 126, 126, 0.434);
     color: #fff;
     display: none; 
     justify-content: center;
@@ -536,7 +531,7 @@ th
     text-align: center; 
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bold;
-    background-color: #ab6ddd;
+    background-color: #dcc2f2;
 }
 
 td {
