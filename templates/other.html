@@ -22,7 +22,6 @@
             <table>
                 <tr>
                     <th>Host</th>
-                    <th>Event</th>
                     <th>Location</th>
                     <th>Date</th>
                     <th>Time</th>
@@ -33,7 +32,6 @@
                 {% for event in other_list %}
                     <tr>
                         <td> {{ event.host }} </td>
-                        <td> {{ event.event_type }} </td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
                             target="_blank" class="insta_link"> {{ event.address }}

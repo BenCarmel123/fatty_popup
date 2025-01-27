@@ -10,64 +10,62 @@
         <div class="corner_links">
             <a href="/"> Homepage </a>
         </div>
+        <br><br>
         {% with ramen_list = ramen_list %}
         {% if not ramen_list %}
-        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-        <div class="no_ramen_message">
-            <h4 class="pop_counter"> No upcoming ramen pop-ups </h4>
-        </div>
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <h4 class="pop_counter"> No upcoming ramen pop-ups </h4>
         {% else %}
-        <h1 class="table_title"> Ramen Pop-ups </h1>
+        <h1> Ramen Pop-ups </h1>
+        <br><br>
         <div class="table_container">
             <table>
-                <thead>
-                    <tr>
-                        <th>Host</th>
-                        <th>Event</th>
-                        <th>Location</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Price</th>
-                        <th>Contact</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for event in ramen_list %}
+                <tr>
+                    <th>Host</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Price</th>
+                    <th>Contact</th>
+                    <th>Details</th>
+                </tr>
+                {% for event in ramen_list %}
                     <tr>
                         <td>{{ event.host }}</td>
-                        <td>{{ event.event_type }}</td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
                                target="_blank" class="insta_link">{{ event.address }}</a>
                         </td>
                         <td>{{ event.date.strftime('%d.%m') }}</td>
                         <td>{{ event.time.strftime('%H:%M') }}</td>
-                        <td>{{ event.price_range }}</td>
+                        <td>{{ event.price_range }}₪</td>
+                        {% with contact = event.contact %}
+                        {% if contact[:2] == "05" %}
+                        <td>{{ contact[:3] + "-" + contact[3:] }}</td>
+                        {% elif ".com" not in contact %}
                         <td>
-                            {% with contact = event.contact %}
-                            {% if contact[:2] == "05" %}
-                                {{ contact[:3] + "-" + contact[3:] }}
-                            {% elif ".com" not in contact %}
-                                <a href="https://www.instagram.com/{{ event.contact }}" 
-                                   target="_blank" class="insta_link">{{ event.contact }}</a>
-                            {% else %}
-                                {{ contact }}
-                            {% endif %}
-                            {% endwith %}
+                            <a href="https://www.instagram.com/{{ contact[1:] if contact.startswith('@') else contact }}" 
+                               target="_blank" class="insta_link">{{ contact }}</a>
                         </td>
+                        {% else %}
+                        <td>{{ contact }}</td>
+                        {% endif %}
+                        {% endwith %}
                         <td>
-                            <details class="event_details">
-                                <summary class="pop_event_details" data-description="{{ event.description }}">
-                                </summary>
+                            <details>
+                                <summary data-description="{{ event.description }}"></summary>
                             </details>
                         </td>
                     </tr>
-                    {% endfor %}
-                </tbody>
+                {% endfor %}
             </table>
+            <div class="event_details_container">
+                <p class="event_details"></p>   
+                <button id="close_pop"> X </button>
+            </div>
         </div>
         {% endif %}
         {% endwith %}
     </body>
+    <script src="{{ url_for('static', filename='scripts/pop.js') }}"></script>
 </html>
