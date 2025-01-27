@@ -39,8 +39,6 @@
                     </a>
                 </td>
                 <td> {{ event.date.strftime('%d.%m') }} </td>
-                {% endif %}
-                {% endwith %}
                 <td> 
                     <form action="{{ url_for('main.delete_event_by_id', id=event.id) }}" method="POST">
                         <button type="submit" class="delete_button"> X </button>
