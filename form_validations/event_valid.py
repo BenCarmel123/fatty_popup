@@ -58,7 +58,7 @@ def validate_event(host, event_name, event_type, description, address, date, tim
         res += "Event name" + "\n"
     if event_type == "select":
         res += "Event type" + "\n"
-    if not description or len(description) > 100:
+    if not description or len(description) > 500:
         res += "Description"+ "\n"
     if not address or len(address) > 100:
         res += "Address" + "\n"
