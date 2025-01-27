@@ -9,19 +9,20 @@
 
 .button3
 {
+    font-style: italic;
     letter-spacing: .05rem;
     color: white;
     font-weight: bold;
     cursor: pointer;
     width: 100px;
-    height: 60px;
+    height: 50px;
     display: inline-block;
     border-radius: 110px;
     border-color: #ab6ddd;
     background: var(--Schemes-Primary, #ab6ddd);
     font-family: Varela Round;
     transition: all 0.1s ease-in-out;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .button3:hover {
@@ -536,7 +537,7 @@ th
     text-align: center; 
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bold;
-    background-color: #ab6ddd;
+    background-color: #d299ff;
 }
 
 td

@@ -22,9 +22,9 @@
             <table>
                 <tr>
                     <th>Host</th>
+                    <th>Event</th>
                     <th>Location</th>
                     <th>Date</th>
-                    <th>Time</th>
                     <th>Price</th>
                     <th>Contact</th>
                     <th>Details</th>
@@ -32,13 +32,13 @@
                 {% for event in other_list %}
                     <tr>
                         <td> {{ event.host }} </td>
+                        <td> {{ event.event_name }} </td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
                             target="_blank" class="insta_link"> {{ event.address }}
                             </a>
                         </td>
                         <td> {{ event.date.strftime('%d.%m') }} </td>
-                        <td> {{ event.time.strftime('%H:%M') }} </td>
                         <td> {{ event.price_range }}₪ </td>
                         {% with contact = event.contact %}
                         {% if contact[:2] == "05" %}

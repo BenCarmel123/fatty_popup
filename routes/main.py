@@ -52,16 +52,11 @@ def ramen_list():
     ramen_list = sorted(Event.query.filter(Event.event_type.ilike('ramen')).all(), key=lambda x: x.date)
     return render_template('ramen.html', ramen_list=ramen_list)
 
-@main.route('/wine_list')
-def wine_list():
-    wine_list = sorted(Event.query.filter(Event.event_type.ilike('wine')).all(), key=lambda x: x.date)
-    return render_template('wine.html' , wine_list=wine_list)
-    
 @main.route('/other_list')
 def other_list():
     other_list = Event.query.filter(
-    ~Event.event_type.ilike('ramen'),
-    ~Event.event_type.ilike('wine')).order_by(Event.date).all()
+        ~Event.event_type.ilike('ramen')
+    ).order_by(Event.date).all()
     return render_template('other.html', other_list=other_list)
 
 
