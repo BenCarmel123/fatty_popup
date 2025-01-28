@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.style.display = 'none';
 
     // Function to show the details popup
-    function showDetails(clickEvent) {
-        const description = clickEvent.target.dataset.description; // Get description
+    function showDetails(event) {
+        const description = event.target.dataset.description; // Get description
         pop.textContent = description; // Set description text
         overlay.style.display = 'flex'; // Show the overlay and popup
     }
@@ -19,15 +19,22 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.display = 'none'; // Hide the overlay and popup
     }
 
-    // Add click listener to each summary element
+    // Add event listeners to each summary element
     arrow.forEach(summary => {
         summary.addEventListener('click', showDetails);
+        summary.addEventListener('touchstart', showDetails); // Support for touch devices
     });
 
-    // Add click listener to the overlay (to close the popup)
+    // Add event listener to the overlay to close the popup
     overlay.addEventListener('click', (e) => {
         if (!detailsBlock.contains(e.target)) {
             closePop(); // Close only if clicked outside the container
+        }
+    });
+
+    overlay.addEventListener('touchstart', (e) => {
+        if (!detailsBlock.contains(e.target)) {
+            closePop(); // Close only if touch is outside the container
         }
     });
 });

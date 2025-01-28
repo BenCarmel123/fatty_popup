@@ -402,6 +402,7 @@ details summary {
     justify-content: center;
     align-items: center;
     z-index: 999; /* Ensure it sits above other elements */
+    touch-action: none;
 }
 .event_details
  {
