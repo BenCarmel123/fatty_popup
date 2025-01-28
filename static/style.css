@@ -594,11 +594,7 @@ h1
 }
 
 tbody tr:nth-child(even) {
-    background-color: #fafaf6;
+    background-color: #f4f4f4;
   }
   
-  tbody tr:nth-child(odd) {
-    background-color: white;
-  }
-
-
+  
