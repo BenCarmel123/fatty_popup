@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pop = document.querySelector('.event_details');
     const overlay = document.querySelector('.wrapper');
     let isFirstLoad = true;
+    let touchStartY;
 
     overlay.style.display = 'none';
 
@@ -21,28 +22,31 @@ document.addEventListener('DOMContentLoaded', () => {
         
         pop.textContent = description;
         overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+        document.documentElement.style.position = 'fixed';
+        document.documentElement.style.width = '100%';
         event.target.parentElement.open = false;
     }
 
     function closePop() {
         overlay.style.display = 'none';
-        document.body.style.overflow = '';
+        document.documentElement.style.position = '';
+        document.documentElement.style.width = '';
         document.querySelectorAll('details').forEach(d => d.open = false);
     }
 
     arrow.forEach(summary => {
-        ['touchstart', 'click'].forEach(eventType => {
-            summary.addEventListener(eventType, handleEvent, { passive: false });
-        });
+        summary.addEventListener('touchend', handleEvent, { passive: false });
+        summary.addEventListener('click', handleEvent, { passive: false });
     });
 
-    overlay.addEventListener('touchstart', (e) => {
+    overlay.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
+    
+    overlay.addEventListener('touchend', (e) => {
         if (!detailsBlock.contains(e.target)) {
             closePop();
             e.preventDefault();
         }
-    });
+    }, { passive: false });
 
     overlay.addEventListener('click', (e) => {
         if (!detailsBlock.contains(e.target)) {
