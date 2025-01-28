@@ -52,7 +52,7 @@ def valid_word(word):
 
 def validate_event(host, event_name, event_type, description, address, date, time, price_range, contact):
     res = ""
-    if not host or len(host) > 30:
+    if not host or len(host) > 40:
         res += "Host" + "\n"
     if not event_name or len(event_name) > 40:
         res += "Event name" + "\n"
