@@ -1,40 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const arrow = document.querySelectorAll('summary'); // Select all summary elements
-    const detailsBlock = document.querySelector('.event_details_container'); // Details container
-    const pop = document.querySelector('.event_details'); // Description placeholder
-    const overlay = document.querySelector('.wrapper'); // Wrapper as overlay
+    const summaries = document.querySelectorAll('summary');
+    const detailsBlock = document.querySelector('.event_details_container');
+    const pop = document.querySelector('.event_details');
+    const overlay = document.querySelector('.wrapper');
 
-    // Initially hide the overlay and details container
     overlay.style.display = 'none';
 
-    // Function to show the details popup
     function showDetails(event) {
-        const description = event.target.dataset.description; // Get description
-        pop.textContent = description; // Set description text
-        overlay.style.display = 'flex'; // Show the overlay and popup
+        event.preventDefault(); // Prevent default details toggle
+        const description = event.target.dataset.description;
+        pop.textContent = description;
+        overlay.style.display = 'flex';
     }
 
-    // Function to close the popup
     function closePop() {
-        overlay.style.display = 'none'; // Hide the overlay and popup
+        overlay.style.display = 'none';
+        // Close all details elements
+        document.querySelectorAll('details').forEach(detail => {
+            detail.open = false;
+        });
     }
 
-    // Add event listeners to each summary element
-    arrow.forEach(summary => {
+    summaries.forEach(summary => {
+        summary.parentElement.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent details toggle
+        });
+        
         summary.addEventListener('click', showDetails);
-        summary.addEventListener('touchstart', showDetails); // Support for touch devices
+        summary.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            showDetails(e);
+        });
     });
 
-    // Add event listener to the overlay to close the popup
     overlay.addEventListener('click', (e) => {
         if (!detailsBlock.contains(e.target)) {
-            closePop(); // Close only if clicked outside the container
+            closePop();
         }
     });
 
     overlay.addEventListener('touchstart', (e) => {
         if (!detailsBlock.contains(e.target)) {
-            closePop(); // Close only if touch is outside the container
+            e.preventDefault();
+            closePop();
         }
     });
 });
