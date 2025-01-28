@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const summaries = document.querySelectorAll('summary');
+    const arrow = document.querySelectorAll('summary');
     const detailsBlock = document.querySelector('.event_details_container');
     const pop = document.querySelector('.event_details');
     const overlay = document.querySelector('.wrapper');
@@ -7,30 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.style.display = 'none';
 
     function showDetails(event) {
-        event.preventDefault(); // Prevent default details toggle
+        event.stopPropagation();
         const description = event.target.dataset.description;
         pop.textContent = description;
         overlay.style.display = 'flex';
+        event.target.parentElement.open = false;
     }
 
     function closePop() {
         overlay.style.display = 'none';
-        // Close all details elements
-        document.querySelectorAll('details').forEach(detail => {
-            detail.open = false;
-        });
+        document.querySelectorAll('details').forEach(d => d.open = false);
     }
 
-    summaries.forEach(summary => {
-        summary.parentElement.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent details toggle
-        });
-        
+    arrow.forEach(summary => {
         summary.addEventListener('click', showDetails);
-        summary.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            showDetails(e);
-        });
+        summary.addEventListener('touchend', showDetails);
     });
 
     overlay.addEventListener('click', (e) => {
@@ -39,9 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    overlay.addEventListener('touchstart', (e) => {
+    overlay.addEventListener('touchend', (e) => {
         if (!detailsBlock.contains(e.target)) {
-            e.preventDefault();
             closePop();
         }
     });

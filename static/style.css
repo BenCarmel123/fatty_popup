@@ -551,7 +551,7 @@ th
     text-align: center; 
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bold;
-    background-color: #d299ff;
+    background-color: rgb(66, 66, 66);
 }
 
 td
