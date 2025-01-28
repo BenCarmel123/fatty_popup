@@ -3,12 +3,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailsBlock = document.querySelector('.event_details_container');
     const pop = document.querySelector('.event_details');
     const overlay = document.querySelector('.wrapper');
+    let isFirstLoad = true;
 
     overlay.style.display = 'none';
 
-    function showDetails(event) {
+    function handleEvent(event) {
+        if (!event.isTrusted || isFirstLoad) {
+            isFirstLoad = false;
+            return;
+        }
+        
+        event.preventDefault();
         event.stopPropagation();
+        
         const description = event.target.dataset.description;
+        if (!description) return;
+        
         pop.textContent = description;
         overlay.style.display = 'flex';
         event.target.parentElement.open = false;
@@ -20,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     arrow.forEach(summary => {
-        summary.addEventListener('click', showDetails);
-        summary.addEventListener('touchend', showDetails);
+        summary.addEventListener('click', handleEvent, {passive: false});
+        summary.addEventListener('touchstart', handleEvent, {passive: false});
     });
 
     overlay.addEventListener('click', (e) => {
@@ -30,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    overlay.addEventListener('touchend', (e) => {
+    overlay.addEventListener('touchstart', (e) => {
         if (!detailsBlock.contains(e.target)) {
             closePop();
         }
