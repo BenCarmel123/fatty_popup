@@ -555,8 +555,8 @@ th
     text-align: center; 
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bold;
-    background-color: #ccc;
-    color: #8c69a7;
+    background-color: #dbdbdb;
+    color: #ab6ddd;
     padding: 12px 15px; 
     top: 0;
     z-index: 2;
@@ -568,10 +568,10 @@ td
     border: 1px solid darkgray; 
     padding: 10px; 
     text-align: center; 
-    background-image: radial-gradient(#fffffff4 9%, #f9faf6);
     letter-spacing: .1rem;
     border: none; border-bottom: 1px solid #eee;
     padding: 12px 15px; 
+    font-weight: bold;
 }
 
 textarea 
@@ -593,7 +593,7 @@ h1
 }
 
 tbody tr:nth-child(even) {
-    background-color: #d3f4fa; 
+    background-color: black; 
   }
   
   tbody tr:nth-child(odd) {
