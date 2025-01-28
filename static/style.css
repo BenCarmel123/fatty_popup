@@ -565,12 +565,13 @@ th
 td
 {
     font-style: italic;
-    border: 1px solid darkgray; 
-    padding: 10px; 
-    text-align: center; 
+    border: 1px solid darkgray;
+    padding: 10px;
+    text-align: center;
     letter-spacing: .1rem;
-    border: none; border-bottom: 1px solid #eee;
-    padding: 12px 15px; 
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 12px 15px;
     font-weight: bold;
 }
 
@@ -593,7 +594,7 @@ h1
 }
 
 tbody tr:nth-child(even) {
-    background-color: black; 
+    background-color: #fafaf6;
   }
   
   tbody tr:nth-child(odd) {
