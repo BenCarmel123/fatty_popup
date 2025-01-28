@@ -363,7 +363,6 @@
 details summary {
     appearance: none; /* Remove the default arrow */
     cursor: pointer;
-    background-image: url('../static/images/down-arrow.png'); /* Custom arrow */
     background-repeat: no-repeat;
     background-position: left center; /* Align the arrow to the left */
     background-size: 16px 16px; /* Adjust the arrow size */
@@ -391,6 +390,19 @@ details summary {
     transform: translate(-50%, -50%); /* Proper centering */
 }
 
+.wrapper
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it sits above other elements */
+}
 .event_details
  {
     font-size: medium;
