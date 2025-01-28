@@ -476,7 +476,7 @@ th {
     text-align: center;
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bold;
-    background-color: #dbdbdb;
+    background-color: #f4f4f4;
     color: #ab6ddd;
     padding: 12px 15px;
     top: 0;
@@ -511,6 +511,7 @@ h1 {
     color: #ab6ddd;
 }
 
-tbody tr:nth-child(even) {
+tbody tr:nth-child(odd) 
+{
     background-color: #f4f4f4;
 }
