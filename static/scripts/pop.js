@@ -21,26 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
         
         pop.textContent = description;
         overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
         event.target.parentElement.open = false;
     }
 
     function closePop() {
         overlay.style.display = 'none';
+        document.body.style.overflow = '';
         document.querySelectorAll('details').forEach(d => d.open = false);
     }
 
     arrow.forEach(summary => {
-        summary.addEventListener('click', handleEvent, {passive: false});
-        summary.addEventListener('touchstart', handleEvent, {passive: false});
-    });
-
-    overlay.addEventListener('click', (e) => {
-        if (!detailsBlock.contains(e.target)) {
-            closePop();
-        }
+        ['touchstart', 'click'].forEach(eventType => {
+            summary.addEventListener(eventType, handleEvent, { passive: false });
+        });
     });
 
     overlay.addEventListener('touchstart', (e) => {
+        if (!detailsBlock.contains(e.target)) {
+            closePop();
+            e.preventDefault();
+        }
+    });
+
+    overlay.addEventListener('click', (e) => {
         if (!detailsBlock.contains(e.target)) {
             closePop();
         }
