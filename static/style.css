@@ -376,17 +376,17 @@ details summary {
     background-color: rgb(66, 66, 66);
     border-radius: 6px;
     position: fixed; /* Position relative to the viewport */
-    width: 50vw;
-    height: 50vh;
+    width: 70vw;
+    height: 70vh;
     color: #e7e3e3;
     justify-content: center; /* Center other content */
     align-items: center; /* Center other content */
     z-index: 1000;
     padding: 20px;
     overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 70%;
+    transform: translate(-70%, -70%);
 }
 
 .event_details
