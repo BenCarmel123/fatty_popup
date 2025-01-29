@@ -1,22 +1,3 @@
-v class="event_details_container">
-                <p class="event_details"></p>   
-            </div>
-            </div>
-        </div>
-        {% endif %}
-            {% endwith %}
-        </body>
-    <script src="{{ url_for('static', filename='scripts/pop.js') }}"></script>
-</html>
-
-ok?
-
-
-There are a few syntax errors in the template. Here's the corrected version:
-
-html
-
-Copy
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,32 +16,6 @@ Copy
         <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
         <h4 class="pop_counter"> No upcoming pop-ups </h4>
         {% else %}
-        {% set event_dic = {} %}
-        {% for event in other_list %}
-            {% if event.description in event_dic %}
-                {% set _ = event_dic[event.description].append(event.date) %}
-            {% else %}
-                {% set _ = event_dic.update({event.description: [event.date]}) %}
-            {% endif %}
-        {% endfor %}
-
-        {% for key in event_dic %}
-            {% if event_dic[key]|length > 1 %}
-                {% set dates = event_dic[key]|sort %}
-                {% set event_dic = event_dic.update({key: dates[0].strftime('%d.%m') + " - " + dates[-1].strftime('%d.%m')}) %}
-            {% else %}
-                {% set event_dic = event_dic.update({key: event_dic[key][0].strftime('%d.%m')}) %}
-            {% endif %}
-        {% endfor %}
-
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="flash">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-
         <h1> Pop-ups </h1>
         <br> <br>
         <div class="table_container">
@@ -75,42 +30,44 @@ Copy
                 </tr>
                 {% for event in other_list %}
                     <tr>
-                        <td>{{ event.host }}</td>
-                        <td>{{ event.event_name }}</td>
+                        <td> {{ event.host }} </td>
+                        <td> {{ event.event_name }} </td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
-                            target="_blank" class="insta_link">{{ event.address }}</a>
+                            target="_blank" class="insta_link"> {{ event.address }}
+                            </a>
                         </td>
-                        <td>{{ event_dic[event.description] }}</td>
+                        <td> {{ event.date.strftime('%d.%m') }} </td>
                         {% with contact = event.contact %}
                         {% if contact[:2] == "05" %}
-                            <td>{{ contact[:3] + "-" + contact[3:] }}</td>
-                        {% elif ".com" not in contact %}
-                            <td>
-                                <a href="https://www.instagram.com/{{ event.contact[1:]
-                                 if event.contact.startswith('@') else event.contact }}" 
-                                target="_blank" class="insta_link">{{ event.contact }}</a>
-                            </td>
+                        <td> {{ contact[:3] + "-" + contact[3:] }} </td>
+                        {% elif ".com" not in contact  %}
+                        <td>
+                            <a href="https://www.instagram.com/{{ event.contact[1:]
+                             if event.contact.startswith('@') else event.contact }}" 
+                            target="_blank" class="insta_link"> {{ event.contact }}
+                            </a>
+                        </td>
                         {% else %}
-                            <td>{{ contact }}</td>
+                        <td> {{ contact }} </td>
                         {% endif %}
                         {% endwith %}
-                        <td>
-                            <details>
-                                <summary data-description="{{ event.description }}"></summary>
+                        <td> 
+                            <details> 
+                                <summary data-description = "{{event.description}}" ></summary>
                             </details>
                         </td>
                     </tr>
                 {% endfor %}
             </table>
             <div class="wrapper">
-                <div class="event_details_container">
-                    <p class="event_details"></p>   
-                </div>
+            <div class="event_details_container">
+                <p class="event_details"></p>   
+            </div>
             </div>
         </div>
         {% endif %}
-        {% endwith %}
-    </body>
+            {% endwith %}
+        </body>
     <script src="{{ url_for('static', filename='scripts/pop.js') }}"></script>
 </html>

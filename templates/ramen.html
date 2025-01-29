@@ -25,7 +25,6 @@
                     <th>Event</th>
                     <th>Location</th>
                     <th>Date</th>
-                    <th>Price</th>
                     <th>Contact</th>
                     <th>Details</th>
                 </tr>
@@ -38,7 +37,6 @@
                                target="_blank" class="insta_link">{{ event.address }}</a>
                         </td>
                         <td>{{ event.date.strftime('%d.%m') }}</td>
-                        <td>{{ event.price_range }}₪</td>
                         {% with contact = event.contact %}
                         {% if contact[:2] == "05" %}
                         <td>{{ contact[:3] + "-" + contact[3:] }}</td>
