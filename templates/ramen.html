@@ -14,19 +14,19 @@
         {% with ramen_list = ramen_list %}
         {% if not ramen_list %}
         <br><br><br><br><br><br><br><br><br><br><br>
-        <h4 class="pop_counter"> No upcoming ramen pop-ups </h4>
+        <h4 class="pop_counter"> No upcoming ramen pop ups </h4>
         {% else %}
-        <h1> Ramen Pop-ups </h1>
-        <br><br>
+        <h1> Ramen Pop ups </h1>
+        <br>
         <div class="table_container">
             <table>
                 <tr>
                     <th>Date</th>
                     <th>Event</th>
                     <th>By</th>
-                    <th>Location</th>
-                    <th>Contact</th>
-                    <th>Details</th>
+                    <th>Where</th>
+                    <th>Dm</th>
+                    <th>Additional info</th>
                 </tr>
                 {% for event in ramen_list %}
                     <tr>
