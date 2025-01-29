@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, current_app 
+from flask import Blueprint, render_template, request, flash, redirect, current_app, session
 from datetime import datetime , timedelta
 from db import db
 from models import Event
@@ -18,6 +18,7 @@ def admin_login():
         username = request.form['username']
         password = request.form['password']
         if username == current_app.config['ADMIN_USERNAME'] and password == current_app.config['ADMIN_PASSWORD']:
+            session['logged_in'] = True
             return redirect('/admin_page')
         else:
             flash("Incorrect Username and/or Password, please try again")
@@ -25,6 +26,8 @@ def admin_login():
 
 @main.route('/admin_page', methods=['GET', 'POST'])
 def admin_page():
+    if not session.get('logged_in'):
+        return redirect('/')
     if request.method == 'GET':
      return render_template('admin_page.html', first_name='Ben', events=Event.query.all())
 
