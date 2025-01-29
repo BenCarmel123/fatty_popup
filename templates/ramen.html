@@ -21,22 +21,22 @@
         <div class="table_container">
             <table>
                 <tr>
-                    <th>By</th>
-                    <th>Event</th>
-                    <th>Location</th>
                     <th>Date</th>
+                    <th>Event</th>
+                    <th>By</th>
+                    <th>Location</th>
                     <th>Contact</th>
                     <th>Details</th>
                 </tr>
                 {% for event in ramen_list %}
                     <tr>
-                        <td>{{ event.host }}</td>
+                        <td>{{ event.date.strftime('%d.%m') }}</td>
                         <td>{{ event.event_name }}</td>
+                        <td>{{ event.host }}</td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
                                target="_blank" class="insta_link">{{ event.address }}</a>
                         </td>
-                        <td>{{ event.date.strftime('%d.%m') }}</td>
                         {% with contact = event.contact %}
                         {% if contact[:2] == "05" %}
                         <td>{{ contact[:3] + "-" + contact[3:] }}</td>
