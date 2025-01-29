@@ -62,15 +62,15 @@ def other_list():
 
 @main.route('/new_event', methods=['GET', 'POST'])
 def event_form():
-    host = db.Column(db.String(30), nullable=False)
-    event_name = db.Column(db.String(20), nullable=False)
+    host = db.Column(db.String(40), nullable=False)
+    event_name = db.Column(db.String(40), nullable=False)
     event_type = db.Column(db.String(20), nullable=False)
     description = db.Column(db.Text, nullable=False)
     address = db.Column(db.String(100), nullable=False)
     date = db.Column(db.Date, nullable=False)
     time = db.Column(db.Time, nullable=False)
     price_range = db.Column(db.String(30), nullable=False)
-    contact = db.Column(db.String(10), nullable=False)
+    contact = db.Column(db.String(25), nullable=False)
     if request.method == 'POST':
         host = request.form['host']
         event_name = request.form['event_name']

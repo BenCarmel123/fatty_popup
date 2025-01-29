@@ -13,7 +13,7 @@ class Event(db.Model):
     date = db.Column(db.Date, nullable=False)
     time = db.Column(db.Time, nullable=False)
     price_range = db.Column(db.String(30), nullable=False)
-    contact = db.Column(db.String(11), nullable=False)
+    contact = db.Column(db.String(25), nullable=False)
     
     def __repr__(self):
         return ""
