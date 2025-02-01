@@ -336,7 +336,7 @@ details summary {
     touch-action: none;
 }
 
-.event_details {
+ p.event_details {
     font-size: medium;
     font-family: 'Varela Round', sans-serif;
     color: white;
