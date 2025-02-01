@@ -30,6 +30,8 @@
 .table_container {
     overflow-x: auto;
     margin-left: -200px;
+    border-radius: 30px;
+    border-color: #f9f9f9
 }
 
 .pop_l {
@@ -451,7 +453,7 @@ input[type="date"], input[type="time"] {
 
 table {
     table-layout: auto;
-    border-radius: 8px;
+    border-radius: 32px;
     overflow: hidden;
     width: 80%;
     border-collapse: collapse;
@@ -459,7 +461,6 @@ table {
     margin-right: 80px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     border-collapse: separate;
-    border-radius: 8px
 }
 
 tr:hover {
