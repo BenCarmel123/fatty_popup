@@ -23,8 +23,8 @@
                 <tr>
                     <th></th>
                     <th>Vibe</th>
+                    <th>At</th>
                     <th>By</th>
-                    <th>Where</th>
                     <th>DM</th>
                     <th>Details</th>
                 </tr>
@@ -32,11 +32,11 @@
                     <tr>
                         <td>{{ event.date.strftime('%d.%m') }}</td>
                         <td>{{ event.event_name }}</td>
-                        <td>{{ event.host }}</td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
                                target="_blank" class="insta_link">{{ event.address }}</a>
                         </td>
+                        <td>{{ event.host }}</td>
                         {% with contact = event.contact %}
                         {% if contact[:2] == "05" %}
                         <td>{{ contact[:3] + "-" + contact[3:] }}</td>
