@@ -17,6 +17,7 @@ def event_counter(gap):
     date_b = (datetime.now() + timedelta(days=gap)).date()
     return Event.query.filter(Event.date >= date_a, Event.date <= date_b).count()
 
+
 @main.route('/', methods=['GET', 'POST'])
 def homepage():
     return render_template('home.html')
@@ -65,11 +66,14 @@ def ramen_list():
 
 @main.route('/other_list')
 def other_list():
-    other_list = get_sorted_events() 
-    return render_template('other.html', other_list=[event for event in other_list if event.event_type != 'ramen'])
+    event_list = get_sorted_events(None)
+    ramen_list = get_sorted_events('ramen')
+    other_list = [event for event in event_list if event not in ramen_list]
+    return render_template('other.html', other_list=other_list)
 
 @main.route('/new_event', methods=['GET', 'POST'])
 def event_form():
+    # If the form is submitted
     if request.method == 'POST':
         host = request.form['host']
         event_name = request.form['event_name']
@@ -85,9 +89,12 @@ def event_form():
             Event.date == date,
             Event.time == time
         ).first()
-        if exists:
+        # Check if event already exists
+        if exists: 
             flash("Event already registered")
             return render_template('/admin_page', first_name='Ben', events = get_sorted_events(None))
+        
+        # Validate event
         message = validate_event(host,event_name,event_type, description, address, date, time, price_range, contact)
         if message == "":
             new_event = Event(
