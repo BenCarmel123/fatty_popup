@@ -23,22 +23,16 @@
     <div class="table_container">
     <table>
         <tr>
-            <th>Host</th>
-            <th>Event</th>
-            <th>Address</th>
             <th>Date</th>
-            <th>Actions</th>
+            <th>Event</th>
+            <th>By</th>
+            <th></th>
         </tr>
         {% for event in events %}
             <tr>
-                <td> {{ event.host }} </td>
-                <td> {{ event.event_type }} </td>
-                <td>
-                    <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
-                    target="_blank" class="insta_link"> {{ event.address }}
-                    </a>
-                </td>
                 <td> {{ event.date.strftime('%d.%m') }} </td>
+                <td> {{ event.event_name }} </td>
+                <td> {{ event.host }} </td>
                 <td> 
                     <form action="{{ url_for('main.delete_event_by_id', id=event.id) }}" method="POST">
                         <button type="submit" class="delete_button"> X </button>
