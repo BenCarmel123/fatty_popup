@@ -319,6 +319,8 @@ details summary {
     overflow-x: hidden;
     top: 50%;
     left: 50%;
+    direction: rtl;
+    text-align: right;
     transform: translate(-50%, -50%);
 }
 
