@@ -341,7 +341,8 @@ details summary {
     font-family: 'Varela Round', sans-serif;
     color: white;
     max-width: 600px;
-    text-align: center;
+    text-align: right;
+    direction: rtl;
     line-height: 1.7;
 }
 
