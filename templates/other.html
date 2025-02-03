@@ -30,7 +30,7 @@
                 </tr>
                 {% for event in other_list %}
                     <tr>
-                        <td> {{ event.date.strftime('%d.%m') }} </td>
+                        <td id="date_cell"> {{ event.date.strftime('%d.%m') }} </td>
                         <td> {{ event.event_name }} </td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 

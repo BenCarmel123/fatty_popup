@@ -487,6 +487,7 @@ th {
     padding: 12px 15px;
     top: 0;
     z-index: 2;
+    box-shadow: -6px 6px 13px 3px rgb(192 190 190 / 81%);
 }
 
 td {
@@ -521,3 +522,12 @@ tbody tr:nth-child(odd)
 {
     background-color: #f4f4f4;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+td:date_cell {
+    position: sticky;
+  }
+  

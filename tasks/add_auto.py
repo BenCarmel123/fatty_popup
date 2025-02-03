@@ -46,7 +46,7 @@ def set_events():
                 address='roots bar, Tel Aviv',
                 date=get_next_saturday(),
                 time=datetime.strptime('17:00', "%H:%M").time(),
-                price_range='?? - ??')
+                price_range='?? - ??', contact='054-1234567')
             db.session.add(event2)
         db.session.commit()
 
