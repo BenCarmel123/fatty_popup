@@ -1,5 +1,7 @@
+import sys
+sys.path.append('/home/BenCarmel123/fatty-popup')
+from run import app, db
 from models import Event
-from run import db, app 
 from datetime import datetime
 
 def cleanup_old_events():
