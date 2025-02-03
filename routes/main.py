@@ -7,19 +7,6 @@ from form_validations.event_valid import validate_event
 
 main = Blueprint('main', __name__)
 
-def delete_past_events():
-    today = datetime.now().date()
-    events_to_delete = Event.query.filter(Event.date < today).all()
-    for event in events_to_delete:
-        db.session.delete(event)
-    db.session.commit()
-
-scheduler = APScheduler()
-
-@scheduler.task('interval', id='delete_expired_events', minutes=1)
-def scheduled_delete_past_events():
-    delete_past_events()  
-
 def get_sorted_events(like=None):
     query = Event.query
     if like:

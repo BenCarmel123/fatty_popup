@@ -1,7 +1,7 @@
 
 from flask import Flask
 from db import db
-from routes.main import main, scheduler
+from routes.main import main
 from routes.api import api
 import os
 
@@ -26,9 +26,6 @@ os.makedirs(os.path.join(base_dir, 'tables'), exist_ok=True)
 db.init_app(app)
 with app.app_context():
     db.create_all()
-
-scheduler.init_app(app)
-scheduler.start()
 
 app.register_blueprint(main)
 app.register_blueprint(api, url_prefix='/api')
