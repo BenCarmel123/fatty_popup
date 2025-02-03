@@ -483,7 +483,7 @@ th {
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bold;
     background-color: #dcdcdc;
-    color: #504d4dd4;
+    color: cadetblue;
     padding: 12px 15px;
     top: 0;
     z-index: 2;
@@ -516,7 +516,7 @@ textarea {
 
 h1 {
     font-style: italic;
-    color: #504d4dd4;
+    color: cadetblue;
 }
 
 tbody tr:nth-child(odd) 
