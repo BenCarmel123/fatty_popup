@@ -7,19 +7,18 @@
 
 .button3 {
     font-style: italic;
-    letter-spacing: .05rem;
-    color: white;
+    letter-spacing: .07rem;
+    color: #f4f4f4;
     font-weight: bold;
     cursor: pointer;
-    width: 100px;
-    height: 50px;
     display: inline-block;
     border-radius: 110px;
-    border-color: #ab6ddd;
-    background: var(--Schemes-Primary, #ab6ddd);
+    border-color: cadetblue;
+    background: cadetblue;
     font-family: Varela Round;
     transition: all 0.1s ease-in-out;
-    font-size: 16px;
+    font-size: 14px;
+    padding: 12px 24px;
 }
 
 .button3:hover {
@@ -31,14 +30,15 @@
     overflow-x: auto;
     margin-left: -200px;
     border-radius: 30px;
-    border-color: #f9f9f9
+    border-color: #f9f9f9;
+    scroll-padding: 100px;
 }
 
 .pop_l {
     font-style: italic;
     animation: fadeIn 4s;
     text-decoration: None;
-    color: #ab6ddd;
+    color: cadetblue;
     font-size: 25px;
 }
 
@@ -49,7 +49,7 @@
 
 .to_login {
     text-align: center;
-    color: #ab6ddd;
+    color: cadetblue;
     justify-content: center;
     align-content: center;
     font-weight: bold;
@@ -87,11 +87,11 @@
 }
 
 @keyframes entry {
-    0% {color:#242123d1; top:200px;}
-    25% {color:#3d343ad1; top:100px;}
-    50% {color:#5c4b5fd1; top:50px;}
-    75% {color:#7a5f7fd1; top:25px;}
-    100% {color:#ab6ddd; top:0px;}
+    0% {color: black; top:200px;}
+    25% {color:#2a2629d1; top:100px;}
+    50% {color:rgb(62, 78, 79); top:50px;}
+    75% {color: rgb(84, 118, 119); top:25px;}
+    100% {color:cadetblue; top:0px;}
 }
 
 .title_container {
@@ -115,7 +115,7 @@
     margin-left: 10px;
     font-size: 20px;
     text-decoration: none;
-    color: #ab6ddd;
+    color: cadetblue;
     font-size: medium;
     transition: all 0.2s ease-in-out;
 }
@@ -146,7 +146,7 @@
 }
 
 .delete_button:hover {
-    background-color: #ab6ddd;
+    background-color: cadetblue;
     cursor: pointer;
 }
 
@@ -165,7 +165,7 @@
 }
 
 .close_pop:hover {
-    background-color: #ab6ddd;
+    background-color: cadetblue;
     cursor: pointer;
 }
 
@@ -178,14 +178,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #ab6ddd;
+    color: cadetblue;
 }
 
 .password_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #ab6ddd;
+    color: cadetblue;
 }
 
 .password_container div {
@@ -280,7 +280,7 @@
 .insta_link:hover {
     text-decoration: underline;
     cursor: pointer;
-    color: #ab6ddd;
+    color: cadetblue;
 }
 
 .container_newevent {
@@ -359,14 +359,14 @@ body {
 }
 
 h2 {
-    color: #ab6ddd;
+    color: cadetblue;
     font-weight: bold;
     font-style: italic;
 }
 
 div {
     font-size: x-large;
-    color: #ab6ddd;
+    color: cadetblue;
 }
 
 ol {
@@ -378,13 +378,13 @@ td a.insta_link {
     font-weight: bold;
     text-decoration: none;
     font-family: 'Varela Round', sans-serif;
-    color: darkgray;
+    color: cadetblue;
 }
 
 td a.insta_link:hover {
     text-decoration: underline;
     cursor: pointer;
-    color: #ab6ddd;
+    color: cadetblue;
 }
 
 input::placeholder {
@@ -483,7 +483,7 @@ th {
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bold;
     background-color: #dcdcdc;
-    color: #ab6ddd;
+    color: #504d4dd4;
     padding: 12px 15px;
     top: 0;
     z-index: 2;
@@ -500,6 +500,7 @@ td {
     border-bottom: 1px solid #eee;
     padding: 12px 15px;
     font-weight: bold;
+    color:#504d4dd4;
 }
 
 textarea {
@@ -515,7 +516,7 @@ textarea {
 
 h1 {
     font-style: italic;
-    color: #ab6ddd;
+    color: #504d4dd4;
 }
 
 tbody tr:nth-child(odd) 
