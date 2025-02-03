@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, flash, redirect, current_app, session
-from flask_apscheduler import APScheduler
 from datetime import datetime , timedelta
 from db import db
 from models import Event
