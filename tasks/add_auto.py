@@ -35,7 +35,7 @@ def set_events():
                 address='Hacarmel 15, Tel Aviv',
                 date=get_next_thursday(),
                 time=datetime.strptime('12:00', "%H:%M").time(),
-                price_range='?? - ??')
+                price_range='?? - ??', contact='@asafchetrit')
             db.session.add(event1)
         if not flag2:
             event2 = Event(
@@ -46,7 +46,7 @@ def set_events():
                 address='roots bar, Tel Aviv',
                 date=get_next_saturday(),
                 time=datetime.strptime('17:00', "%H:%M").time(),
-                price_range='?? - ??', contact='054-1234567')
+                price_range='?? - ??', contact='@asafchetrit')
             db.session.add(event2)
         db.session.commit()
 
