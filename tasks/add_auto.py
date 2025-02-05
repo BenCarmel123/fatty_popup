@@ -4,6 +4,17 @@ from run import app, db
 from models import Event
 from datetime import datetime, timedelta
 
+
+def get_next_tuesday():
+    today = datetime.now().date()
+    days_ahead = (1 - today.weekday()) % 7
+    return today + timedelta(days=days_ahead)
+
+def get_next_wednesday():
+    today = datetime.now().date()
+    days_ahead = (2 - today.weekday()) % 7
+    return today + timedelta(days=days_ahead)
+
 def get_next_thursday():
     today = datetime.now().date()
     days_ahead = (3 - today.weekday()) % 7
@@ -16,17 +27,49 @@ def get_next_saturday():
 
 def set_events():
     with app.app_context():
+        next_tuesday = get_next_tuesday()
+        next_wednesday = get_next_wednesday()
         next_thursday = get_next_thursday()
         next_saturday = get_next_saturday()
+        fifi_events = Event.query.filter(Event.host == 'Fifi').all()
         asaf_chetrit_events = Event.query.filter(Event.host == 'Asaf Chetrit').all()
-        flag1 = False
-        flag2 = False
+        a_flag1 = False
+        a_flag2 = False
+        f_flag1 = False
+        f_flag2 = False
+        for event in fifi_events:
+            if event.date == next_tuesday:
+                f_flag1 = True
+            if event.date == next_wednesday:
+                f_flag2 = True
+        if not f_flag1:
+            event1 = Event(
+                host='Fifi',
+                event_name='Fifi\'s Ramen',
+                event_type='ramen',
+                description='Fifi\'s Ramen is a pop-up ramen bar in the heart of Tel Aviv. Every Tuesday, Fifi serves a different type of ramen, from traditional to fusion. Come and enjoy a delicious bowl of ramen, made with love!',
+                address='Hacarmel 15, Tel Aviv',
+                date=get_next_tuesday(),
+                time=datetime.strptime('12:00', "%H:%M").time(),
+                price_range='?? - ??', contact='@fifisramen')
+            db.session.add(event1)
+        if not f_flag2:
+            event2 = Event(
+                host='Fifi',
+                event_name='Fifi\'s Ramen',
+                event_type='ramen',
+                description='Fifi\'s Ramen is a pop-up ramen bar in the heart of Tel Aviv. Every Wednesday, Fifi serves a different type of ramen, from traditional to fusion. Come and enjoy a delicious bowl of ramen, made with love!',
+                address='Hacarmel 15, Tel Aviv',
+                date=get_next_wednesday(),
+                time=datetime.strptime('12:00', "%H:%M").time(),
+                price_range='?? - ??', contact='@fifisramen')
+            db.session.add(event2)
         for event in asaf_chetrit_events:
             if event.date == next_thursday:
-                flag1 = True
+                a_flag1 = True
             if event.date == next_saturday:
-                flag2 = True
-        if not flag1:
+                a_flag2 = True
+        if not a_flag1:
             event1 = Event(
                 host='Asaf Chetrit',
                 event_name='Carmel Market Ramen',
@@ -37,7 +80,7 @@ def set_events():
                 time=datetime.strptime('12:00', "%H:%M").time(),
                 price_range='?? - ??', contact='@asafchetrit')
             db.session.add(event1)
-        if not flag2:
+        if not a_flag2:
             event2 = Event(
                 host='Asaf Chetrit',
                 event_name='Ramen at roots',

@@ -35,7 +35,6 @@
 }
 
 .pop_l {
-    font-style: italic;
     animation: fadeIn 4s;
     text-decoration: None;
     color: cadetblue;
@@ -353,7 +352,7 @@ details summary {
 body {
     text-align: center;
     font-family: Varela Round;
-    background-image: radial-gradient(#f9f9f9 19%, #e3e4de);
+    background-image: radial-gradient(#ffffff 19%, #efefef);
     -webkit-font-smoothing: antialiased;
     letter-spacing: .2rem;
 }
