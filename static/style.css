@@ -217,14 +217,12 @@
 
 .button_container {
     gap: 35px;
-    width: 300px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     font-family: 'Varela Round';
     font-weight: bold;
     color: #333;
-    cursor: pointer;
 }
 
 .event_type {
@@ -360,7 +358,6 @@ body {
 h2 {
     color: cadetblue;
     font-weight: bold;
-    font-style: italic;
 }
 
 div {
@@ -514,7 +511,6 @@ textarea {
 }
 
 h1 {
-    font-style: italic;
     color: cadetblue;
 }
 
