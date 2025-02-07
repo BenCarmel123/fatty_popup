@@ -360,6 +360,10 @@ h2 {
     font-weight: bold;
 }
 
+h2#mood {
+    font-style: italic;
+}
+
 div {
     font-size: x-large;
     color: cadetblue;

@@ -45,24 +45,25 @@ def set_events():
         if not f_flag1:
             event1 = Event(
                 host='Fifi',
-                event_name='Fifi\'s Ramen',
+                event_name='Fifi\'s at Yaya',
                 event_type='ramen',
-                description='Fifi\'s Ramen is a pop-up ramen bar in the heart of Tel Aviv. Every Tuesday, Fifi serves a different type of ramen, from traditional to fusion. Come and enjoy a delicious bowl of ramen, made with love!',
-                address='Hacarmel 15, Tel Aviv',
+                description='יפעת תבואה, הידועה בתור פיפיז ראמן, מגיעה עד הודעה חדשה ליאיא לוינסקי כל שלישי ורביעי מ19:00-23:00 להציע תפריט פיוזן של ראמן,כיסונים ועוד ביסים טובים',
+                address='Yaya Levinsky, Tel Aviv',
                 date=get_next_tuesday(),
-                time=datetime.strptime('12:00', "%H:%M").time(),
-                price_range='?? - ??', contact='@fifisramen')
+                time=datetime.strptime('19:00', "%H:%M").time(),
+                price_range='?? - ??', contact='@fifisasianfood')
             db.session.add(event1)
         if not f_flag2:
             event2 = Event(
                 host='Fifi',
-                event_name='Fifi\'s Ramen',
+                event_name='Fifi\'s at Yaya',
                 event_type='ramen',
-                description='Fifi\'s Ramen is a pop-up ramen bar in the heart of Tel Aviv. Every Wednesday, Fifi serves a different type of ramen, from traditional to fusion. Come and enjoy a delicious bowl of ramen, made with love!',
-                address='Hacarmel 15, Tel Aviv',
+                description='יפעת תבואה, הידועה בתור פיפיז ראמן, מגיעה עד הודעה חדשה ליאיא לוינסקי כל שלישי ורביעי מ19:00-23:00 להציע תפריט פיוזן של ראמן,כיסונים ועוד ביסים טובים',
+                address='Yaya Levinsky, Tel Aviv',
                 date=get_next_wednesday(),
-                time=datetime.strptime('12:00', "%H:%M").time(),
-                price_range='?? - ??', contact='@fifisramen')
+                time=datetime.strptime('19:00', "%H:%M").time(),
+                price_range='?? - ??', contact='@fifisasianfood')
+            db.session.add(event1)
             db.session.add(event2)
         for event in asaf_chetrit_events:
             if event.date == next_thursday:
