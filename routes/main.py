@@ -92,7 +92,7 @@ def event_form():
         # Check if event already exists
         if exists: 
             flash("Event already registered")
-            return render_template('/admin', first_name='Ben', events = get_sorted_events(None))
+            return render_template('admin.html', first_name='Ben', events = get_sorted_events(None))
         
         # Validate event
         message = validate_event(host,event_name,event_type, description, address, date, time, price_range, contact)
