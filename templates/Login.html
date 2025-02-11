@@ -1,0 +1,38 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class = "corner_links">
+        <a href="/"> Homepage </a>
+    </div>
+    <br> <br> 
+    {%with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li class="error"> {{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <br> <br> <br> <br> <br> <br> <br> <br> 
+    <form action="/Login" method="post"> 
+        <label for="username" value = "{{input_username if input_username else ''}}" class="form_field"> Admin Key </label> <br>
+        <input type="text" id="username" name="username"> <br> <br>
+        <div class="password_container"> 
+            <div>
+            <label for="password" class="form_field"> Password </label>
+            <button type="button" id="toggle_password"> </button>
+            </div>
+            <input type="password" id="password" name="password" required>
+            </div>
+            <br><br>
+            <button class="button3" type="submit" value="Submit"> Login </button>
+    </form>
+    {% endwith %}
+    <script src="{{ url_for('static', filename='scripts/password.js') }}"> </script>
+</body>
+

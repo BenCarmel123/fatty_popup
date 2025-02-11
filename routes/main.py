@@ -20,58 +20,58 @@ def event_counter(gap):
 
 @main.route('/', methods=['GET', 'POST'])
 def homepage():
-    return render_template('home.html')
+    return render_template('Home.html')
 
-@main.route('/admin_login', methods=['GET', 'POST'])
+@main.route('/Login', methods=['GET', 'POST'])
 def admin_login():
     if request.method == 'GET':
-        return render_template('admin_login.html', input_username = '')
+        return render_template('Login.html', input_username = '')
     else:
         username = request.form['username']
         password = request.form['password']
         if username == current_app.config['ADMIN_USERNAME'] and password == current_app.config['ADMIN_PASSWORD']:
             session['logged_in'] = True
-            return redirect('/admin_page')
+            return redirect('/Admin')
         else:
             flash("Incorrect Username and/or Password, please try again")
-            return render_template('admin_login.html', input_username=username)
+            return render_template('Login.html', input_username=username)
 
-@main.route('/admin_page', methods=['GET', 'POST'])
+@main.route('/Admin', methods=['GET', 'POST'])
 def admin_page():
     if not session.get('logged_in'):
         return redirect('/')
     if request.method == 'GET':
-     return render_template('admin_page.html', first_name='Ben', events = get_sorted_events(None))
+     return render_template('Admin.html', first_name='Ben', events = get_sorted_events(None))
 
 
-@main.route('/admin_page/<int:id>', methods=['POST'])
+@main.route('/Admin/<int:id>', methods=['POST'])
 def delete_event_by_id(id):
     event = Event.query.get(id)
     if not event:
         flash("Event not found")
-        return render_template('admin_page.html', events = get_sorted_events(None), first_name='Ben')
+        return render_template('Admin.html', events = get_sorted_events(None), first_name='Ben')
     db.session.delete(event)
     db.session.commit()
     flash("Event deleted successfully")
-    return render_template('admin_page.html', events = get_sorted_events(None), first_name='Ben')
+    return render_template('Admin.html', events = get_sorted_events(None), first_name='Ben')
 
-@main.route('/pop_list')
+@main.route('/Pop')
 def pop_list():
-    return render_template('pop_list.html', event_count=event_counter(30))
+    return render_template('Pop.html', event_count=event_counter(30))
 
-@main.route('/ramen_list')
+@main.route('/Ramen')
 def ramen_list():
     ramen_list = get_sorted_events('ramen')
-    return render_template('ramen.html', ramen_list=ramen_list)
+    return render_template('Ramen.html', ramen_list=ramen_list)
 
-@main.route('/other_list')
+@main.route('/Other')
 def other_list():
     event_list = get_sorted_events(None)
     ramen_list = get_sorted_events('ramen')
     other_list = [event for event in event_list if event not in ramen_list]
-    return render_template('other.html', other_list=other_list)
+    return render_template('Other.html', other_list=other_list)
 
-@main.route('/new_event', methods=['GET', 'POST'])
+@main.route('/NewEvent', methods=['GET', 'POST'])
 def event_form():
     # If the form is submitted
     if request.method == 'POST':
@@ -92,7 +92,7 @@ def event_form():
         # Check if event already exists
         if exists: 
             flash("Event already registered")
-            return render_template('/admin_page', first_name='Ben', events = get_sorted_events(None))
+            return render_template('/Admin', first_name='Ben', events = get_sorted_events(None))
         
         # Validate event
         message = validate_event(host,event_name,event_type, description, address, date, time, price_range, contact)
@@ -110,11 +110,11 @@ def event_form():
             )
             db.session.add(new_event)
             db.session.commit()
-            return render_template('admin_page.html', my_events = get_sorted_events(None), first_name='Ben')
+            return render_template('Admin.html', my_events = get_sorted_events(None), first_name='Ben')
         else:
             flash(message)
-            return render_template('new_event.html', form_data=request.form)
-    return render_template('new_event.html')
+            return render_template('NewEvent.html', form_data=request.form)
+    return render_template('NewEvent.html')
 
 
 

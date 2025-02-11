@@ -1,0 +1,34 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% with event_count = event_count %}
+    {% endwith %}
+    <div class="pop_list_container">
+        <br> <br> <br> <br> <br> 
+        <h2 id="mood"> Mood? <h2>
+        <div class="button_container">
+            <div class="item1">
+                <a href="/Ramen">
+                    <button class="button3"> Ramen </button>
+                </a>
+            </div>
+            <div class="item3">
+                <a href="/Other">
+                    <button class="button3"> Other </button>
+                </a>
+            </div>
+        </div>
+        {% if event_count > 3 %}
+        <h5 class="pop_counter"> {{ event_count }} upcoming pop-ups to check out! </h5>
+        {% elif event_count==0 %}
+        <h5 class="pop_counter"> No upcoming pop-ups </h5>
+        {% else %}
+        <br>
+        {% endif %}
+    </div>
+</body>
