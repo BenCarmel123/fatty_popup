@@ -482,16 +482,16 @@ th {
     padding: 10px;
     text-align: center;
     border: 1px solid darkgray(232, 222, 222);
-    font-weight: bold;
+    font-weight: bolder;
     background-color: #dcdcdc61;
     color: cadetblue;
     padding: 12px 15px;
     top: 0;
     z-index: 2;
+    font-size:large;
 }
 
 td {
-    font-style: italic;
     border: 1px solid darkgray;
     padding: 10px;
     text-align: center;
@@ -527,7 +527,10 @@ html {
     scroll-behavior: smooth;
 }
 
-td:date_cell {
+.date_cell {
     position: sticky;
+    font-size: medium;
+    font-weight: bold;
+    color:#333;
   }
   

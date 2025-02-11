@@ -26,22 +26,15 @@
                     <th>At</th>
                     <th>By</th>
                     <th>Details</th>
-                    <th>DM</th>
                 </tr>
                 {% for event in other_list %}
                     <tr>
-                        <td id="date_cell"> {{ event.date.strftime('%d.%m') }} </td>
+                        <td class="date_cell"> {{ event.date.strftime('%d.%m') }} </td>
                         <td> {{ event.event_name }} </td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
                             target="_blank" class="insta_link"> {{ event.address }}
                             </a>
-                        </td>
-                        <td> {{ event.host }} </td>
-                        <td> 
-                            <details> 
-                                <summary data-description = "{{event.description}}" ></summary>
-                            </details>
                         </td>
                         {% with contact = event.contact %}
                         {% if contact[:2] == "05" %}
@@ -57,6 +50,11 @@
                         <td> {{ contact }} </td>
                         {% endif %}
                         {% endwith %}
+                        <td> 
+                            <details> 
+                                <summary data-description = "{{event.description}}" ></summary>
+                            </details>
+                        </td>
                     </tr>
                 {% endfor %}
             </table>

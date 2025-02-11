@@ -18,7 +18,6 @@
         {% else %}
         <h1> Ramen Pop ups </h1>
         <br>
-        <div class="table_container">
             <table>
                 <tr>
                     <th></th>
@@ -26,34 +25,34 @@
                     <th>At</th>
                     <th>By</th>
                     <th>Details</th>
-                    <th>DM</th>
                 </tr>
                 {% for event in ramen_list %}
                     <tr>
-                        <td>{{ event.date.strftime('%d.%m') }}</td>
+                        <td class="date_cell">{{ event.date.strftime('%d.%m') }}</td>
                         <td>{{ event.event_name }}</td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
                                target="_blank" class="insta_link">{{ event.address }}</a>
                         </td>
-                        <td>{{ event.host }}</td>
+                        {% with contact = event.contact %}
+                        {% if contact[:2] == "05" %}
+                        <td> {{ contact[:3] + "-" + contact[3:] }} </td>
+                        {% elif ".com" not in contact  %}
+                        <td>
+                            <a href="https://www.instagram.com/{{ event.contact[1:]
+                             if event.contact.startswith('@') else event.contact }}" 
+                            target="_blank" class="insta_link"> {{ event.contact }}
+                            </a>
+                        </td>
+                        {% else %}
+                        <td> {{ contact }} </td>
+                        {% endif %}
+                        {% endwith %}
                         <td>
                             <details>
                                 <summary data-description="{{ event.description }}"></summary>
                             </details>
                         </td>
-                        {% with contact = event.contact %}
-                        {% if contact[:2] == "05" %}
-                        <td>{{ contact[:3] + "-" + contact[3:] }}</td>
-                        {% elif ".com" not in contact %}
-                        <td>
-                            <a href="https://www.instagram.com/{{ contact[1:] if contact.startswith('@') else contact }}" 
-                               target="_blank" class="insta_link">{{ contact }}</a>
-                        </td>
-                        {% else %}
-                        <td>{{ contact }}</td>
-                        {% endif %}
-                        {% endwith %}
                     </tr>
                 {% endfor %}
             </table>
@@ -62,7 +61,7 @@
                 <p class="event_details"></p>   
             </div>
             </div>
-        </div>
+        
         {% endif %}
         {% endwith %}
         <br> <br> <br>
