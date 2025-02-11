@@ -1,4 +1,3 @@
-
 from flask import Flask
 from db import db
 from routes.main import main
@@ -9,9 +8,9 @@ app = Flask(__name__)
 base_dir = os.path.abspath(os.path.dirname(__file__))
 db_dir = os.path.join(base_dir, 'tables')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////' + os.path.join(base_dir, 'tables', 'main.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{os.path.join(db_dir, "main.db")}'
 app.config['SQLALCHEMY_BINDS'] = {
-    'event_db': 'sqlite:////' + os.path.join(base_dir, 'tables', 'event.db')
+    'event_db': f'sqlite:///{os.path.join(db_dir, "event.db")}'
 }
 
 app.config.update(
