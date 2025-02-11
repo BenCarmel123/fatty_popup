@@ -29,7 +29,7 @@
                 </tr>
                 {% for event in ramen_list %}
                     <tr>
-                        <td class="date_cell">{{ event.date.strftime('%d.%m') }}</td>
+                        <td class="edge_cell">{{ event.date.strftime('%d.%m') }}</td>
                         <td>{{ event.event_name }}</td>
                         <td>
                             <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
@@ -49,9 +49,9 @@
                         <td> {{ contact }} </td>
                         {% endif %}
                         {% endwith %}
-                        <td>
+                        <td class="edge_cell">
                             <details>
-                                <summary data-description="{{ event.description }}"></summary>
+                                <summary class="edge_cell" data-description="{{ event.description }}"></summary>
                             </details>
                         </td>
                     </tr>

@@ -61,7 +61,7 @@
 }
 
 .corner_links {
-    letter-spacing: .1rem;
+    letter-spacing: .05rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -359,6 +359,7 @@ body {
 h2 {
     color: cadetblue;
     font-weight: bold;
+    letter-spacing: normal;
 }
 
 h2#mood {
@@ -454,15 +455,15 @@ input[type="date"], input[type="time"] {
 
 table {
     table-layout: auto;
-    border-radius: 32px;
+    border-radius: 22px;
     overflow: hidden;
     width: 80%;
     border-collapse: collapse;
     margin-left: 180px;
     margin-right: 80px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 9px rgb(143 87 87 / 10%);
     border-collapse: separate;
-    border-spacing: 0; 
+    border-spacing: 1.5;
 }
 
 tr:hover {
@@ -483,12 +484,12 @@ th {
     text-align: center;
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bolder;
-    background-color: #dcdcdc61;
+    background-color: #eee;
     color: cadetblue;
     padding: 12px 15px;
     top: 0;
     z-index: 2;
-    font-size:large;
+    font-size: large;
 }
 
 td {
@@ -516,6 +517,7 @@ textarea {
 
 h1 {
     color: cadetblue;
+    letter-spacing: normal;
 }
 
 tbody tr:nth-child(odd) 
@@ -527,10 +529,19 @@ html {
     scroll-behavior: smooth;
 }
 
-.date_cell {
+.edge_cell
+{
     position: sticky;
     font-size: medium;
     font-weight: bold;
-    color:#333;
-  }
+    color: #899fb2e3;
+    background-color: #eee;
+    padding: 12px;
+}
   
+  @media screen and (max-width: 768px) {
+    table {
+        transform: scale(0.75);
+        transform-origin: center;
+    }
+}
