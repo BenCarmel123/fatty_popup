@@ -6,7 +6,7 @@ from datetime import datetime
 
 def cleanup_old_events():
     with app.app_context():
-        old_events = Event.query.filter(Event.date < datetime.now().date()).all()
+        old_events = Event.query.filter(Event.e_date < datetime.now().date()).all()
         for event in old_events:
             db.session.delete(event)
         db.session.commit()

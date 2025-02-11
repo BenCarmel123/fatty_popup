@@ -26,13 +26,23 @@
             <th></th>
             <th>Event</th>
             <th>By</th>
-            <th></th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         {% for event in events %}
             <tr>
-                <td> {{ event.date.strftime('%d.%m') }} </td>
+                <td> {{ display_date(event.s_date, event.e_date) }} </td>
                 <td> {{ event.event_name }} </td>
-                <td> {{ event.host }} </td>
+                {% if event.chef2_name not in ['None',''] %}
+                <td> {{ event.chef1_name  + " / " + event.chef2_name}} </td>
+                {% else %}
+                <td> {{ event.chef1_name }} </td>
+                {% endif %}
+                <td>
+                    <form action="{{ url_for('main.edit_event_by_id', id=event.id) }}" method="POST">
+                        <button type="submit" class="delete_button"> ? </button>
+                    </form>      
+                </td>
                 <td> 
                     <form action="{{ url_for('main.delete_event_by_id', id=event.id) }}" method="POST">
                         <button type="submit" class="delete_button"> X </button>

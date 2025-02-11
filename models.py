@@ -2,18 +2,20 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, Date, Time, Boolean
 from db import db
 class Event(db.Model):
-    __bind_key__ = 'event_db'  
+    __bind_key__ = 'event_db'
     __tablename__ = 'event'
     id = db.Column(db.Integer, primary_key=True)
-    host = db.Column(db.String(40), nullable=False)
     event_name = db.Column(db.String(40), nullable=False)
-    event_type = db.Column(db.String(20), nullable=False)
+    host_name = db.Column(db.String(40), nullable=True)
+    host_insta = db.Column(db.String(20), nullable=True)
+    chef1_name = db.Column(db.String(40), nullable=False)
+    chef2_name = db.Column(db.String(40), nullable=True)
+    chef1_insta = db.Column(db.String(20), nullable=False)
+    chef2_insta = db.Column(db.String(20), nullable=True)
+    type = db.Column(db.String(20), nullable=False)
     description = db.Column(db.Text, nullable=False)
-    address = db.Column(db.String(100), nullable=False)
-    date = db.Column(db.Date, nullable=False)
-    time = db.Column(db.Time, nullable=False)
-    price_range = db.Column(db.String(30), nullable=False)
-    contact = db.Column(db.String(25), nullable=False)
-    
+    location = db.Column(db.String(100), nullable=False)
+    s_date = db.Column(db.Date, nullable=False)
+    e_date = db.Column(db.Date, nullable=False)
     def __repr__(self):
         return ""

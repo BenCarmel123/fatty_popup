@@ -1,7 +1,6 @@
 .error {
-    color: rgb(237, 82, 82);
+    color: 899fb2e3(237, 82, 82);
     text-align: center;
-    list-style-position: inside;
     font-size: small;
 }
 
@@ -22,7 +21,7 @@
 }
 
 .button3:hover {
-    box-shadow: 0 4px 15px rgba(171, 109, 221, 0.5);
+    box-shadow: 0 4px 15px cadetblue(249, 251, 255, 0.5);
     transform: scale(1.1);
 }
 
@@ -39,6 +38,7 @@
     text-decoration: None;
     color: cadetblue;
     font-size: 25px;
+    letter-spacing: 0.15rem;
 }
 
 .pop_l:hover {
@@ -99,13 +99,14 @@
 
 .title {
     font-style: italic;
-    font-size: 50px;
+    font-size: 55px;
     font-family: 'Varela Round', sans-serif;
     font-weight: 700;
     animation-name: entry;
     animation-duration: 1.3s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
+    letter-spacing: 0.5rem;
 }
 
 .corner_links a {
@@ -170,7 +171,7 @@
 
 .admin_panel {
     text-align: center;
-    color: darkgrey;
+    color: #899fb2e3;
 }
 
 .pop_list_container {
@@ -296,7 +297,8 @@ details summary {
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 16px 16px;
-    color: darkgray;
+    color: #899fb2e3;
+    font-size: 18px;
 }
 
 .event_details_container {
@@ -485,11 +487,12 @@ th {
     border: 1px solid darkgray(232, 222, 222);
     font-weight: bolder;
     background-color: #eee;
-    color: cadetblue;
+    color: #899fb2e3;
     padding: 12px 15px;
     top: 0;
     z-index: 2;
     font-size: large;
+    letter-spacing: 0.12rem;
 }
 
 td {

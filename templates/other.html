@@ -16,40 +16,41 @@
         <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
         <h4 class="pop_counter"> No upcoming pop ups </h4>
         {% else %}
-        <h1> Pop ups </h1>
+        <h1> All Other Pop ups </h1>
         <br> 
         <div class="table_container">
             <table>
                 <tr>
                     <th></th>
-                    <th>Vibe</th>
+                    <th>What's Poppin'?</th>
                     <th>At</th>
                     <th>By</th>
                     <th>Details</th>
                 </tr>
                 {% for event in other_list %}
                     <tr>
-                        <td class="edge_cell"> {{ event.date.strftime('%d.%m') }} </td>
+                        <td class="edge_cell"> {{display_date(event.s_date, event.e_date)}} </td>
                         <td> {{ event.event_name }} </td>
                         <td>
-                            <a href="https://www.google.com/maps/search/{{ event.address | urlencode }}" 
-                            target="_blank" class="insta_link"> {{ event.address }}
+                            <a href="https://www.google.com/maps/search/{{ event.location | urlencode }}" 
+                            target="_blank" class="insta_link"> {{display_location(event.host_name, event.location)}}
                             </a>
+                            {% if event.host_insta %}
+                            <a href="https://www.instagram.com/{{ event.host_insta[1:] }}/" class="insta_link"> 
+                                {{ event.host_insta }} </a>
+                            {% endif %}
                         </td>
-                        {% with contact = event.contact %}
-                        {% if contact[:2] == "05" %}
-                        <td> {{ contact[:3] + "-" + contact[3:] }} </td>
-                        {% elif ".com" not in contact  %}
                         <td>
-                            <a href="https://www.instagram.com/{{ event.contact[1:]
-                             if event.contact.startswith('@') else event.contact }}" 
-                            target="_blank" class="insta_link"> {{ event.contact }}
+                            <a href="https://www.instagram.com/{{ event.chef1_insta[1:] }}/"
+                            target="_blank" class="insta_link"> {{ event.chef1_name }}
                             </a>
+                            {% if event.chef2_name %}
+                            <br> <br>
+                            <a href="https://www.instagram.com/{{ event.chef2_insta[1:] }}/" 
+                            target="_blank" class="insta_link"> {{ event.chef2_name }}
+                            </a>
+                            {% endif %}
                         </td>
-                        {% else %}
-                        <td> {{ contact }} </td>
-                        {% endif %}
-                        {% endwith %}
                         <td class="edge_cell"> 
                             <details> 
                                 <summary data-description = "{{event.description}}" ></summary>
