@@ -1,5 +1,5 @@
 .error {
-    color: 899fb2e3(237, 82, 82);
+    color: #899fb2e3(237, 82, 82);
     text-align: center;
     font-size: small;
 }
@@ -42,7 +42,7 @@
 }
 
 .pop_l:hover {
-    color: 899fb2e3;
+    color: #899fb2e3;
     cursor: pointer;
 }
 
@@ -73,7 +73,7 @@
     font-family: Varela Round;
     font-size: 20px;
     font-weight: bold;
-    color: 899fb2e3;
+    color: #899fb2e3;
     display: inline;
     text-align: left;
 }
@@ -139,7 +139,7 @@
     height: 30px;
     width: 30px;
     color: white;
-    background-color: 899fb2e3;
+    background-color: #899fb2e3;
     background-image: url('../static/images/delete.png');
     border: none;
     border-radius: 7px;
@@ -157,7 +157,7 @@
     height: 30px;
     width: 30px;
     color: white;
-    background-color: 899fb2e3;
+    background-color: #899fb2e3;
     background-image: url('../static/images/delete.png');
     border: none;
     border-radius: 12px;
@@ -264,7 +264,7 @@
 }
 
 .pop_counter {
-    color: 899fb2e3;
+    color: #899fb2e3;
 }
 
 .container_newevent {
@@ -347,7 +347,6 @@ body {
 h2 {
     color: cadetblue;
     font-weight: bold;
-    letter-spacing: normal;
 }
 
 h2#mood {
@@ -356,7 +355,7 @@ h2#mood {
 
 div {
     font-size: x-large;
-    color: cadetblue;
+    color: #899fb2e3;
 }
 
 ol {
@@ -384,19 +383,19 @@ td a.insta_link:hover {
     font-weight: bold;
     text-decoration: none;
     font-family: 'Varela Round', sans-serif;
-    color: cadetblue;
+    color: #899fb2e3;
     transition: all 0.2s ease-in-out;
 }
 
 .insta_link:hover {
     text-decoration: underline;
     cursor: pointer;
-    color: 899fb2e3;
+    color: cadetblue;
     transform: scale(1.025);
 }
 
 input::placeholder {
-    color: 899fb2e3;
+    color: #899fb2e3;
     font-size: 16px;
     font-family: Varela Round;
 }
@@ -464,12 +463,11 @@ table {
     border-radius: 22px;
     overflow: hidden;
     width: 80%;
-    border-collapse: collapse;
     margin-left: 165px;
     margin-right: 80px;
     box-shadow: 0 2px 9px rgb(143 87 87 / 10%);
     border-collapse: separate;
-    border-spacing: 1.5;
+    border-spacing: 3;
 }
 
 tr:hover {
@@ -488,7 +486,7 @@ th {
     position: sticky;
     padding: 10px;
     text-align: center;
-    border: 1px solid 899fb2e3(232, 222, 222);
+    border: 1px solid #899fb2e3(232, 222, 222);
     font-weight: bolder;
     background-color: #eee;
     color: #899fb2e3;
@@ -503,7 +501,6 @@ td {
     text-align: center;
     letter-spacing: .1rem;
     border: none;
-    border-bottom: 1px solid #899fb2e3;
     padding: 12px 15px;
     font-weight: bold;
     color:#504d4dd4;
