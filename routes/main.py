@@ -23,7 +23,9 @@ def display_location(host_name, location):
     return host_name if not location else location
 
 def display_chefs(chef1_name, chef2_name):
-    return chef1_name if chef2_name in ['None',''] or not chef2_name else chef1_name + ' / ' + chef2_name
+    if chef2_name is None or chef2_name and chef2_name in ['None','']:
+        return chef1_name
+    return chef1_name + ' / ' + chef2_name
 
 @main.context_processor
 def utility_processor():
