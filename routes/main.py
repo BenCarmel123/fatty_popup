@@ -22,9 +22,12 @@ def display_date(date1, date2):
 def display_location(host_name, location):
     return host_name if not location else location
 
+def display_chefs(chef1_name, chef2_name):
+    return chef1_name if chef2_name in ['None',''] else chef1_name + ' / ' + chef2_name
+
 @main.context_processor
 def utility_processor():
-    return {'display_date': display_date, 'display_location': display_location , 'first_name': 'Ben'}
+    return {'display_date': display_date, 'display_location': display_location , 'first_name': 'Ben', 'display_chefs': display_chefs}
 
 def get_sorted_events(like=None):
     query = Event.query
