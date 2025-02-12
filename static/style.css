@@ -42,7 +42,7 @@
 }
 
 .pop_l:hover {
-    color: darkgray;
+    color: 899fb2e3;
     cursor: pointer;
 }
 
@@ -73,7 +73,7 @@
     font-family: Varela Round;
     font-size: 20px;
     font-weight: bold;
-    color: darkgray;
+    color: 899fb2e3;
     display: inline;
     text-align: left;
 }
@@ -139,7 +139,7 @@
     height: 30px;
     width: 30px;
     color: white;
-    background-color: darkgray;
+    background-color: 899fb2e3;
     background-image: url('../static/images/delete.png');
     border: none;
     border-radius: 7px;
@@ -157,7 +157,7 @@
     height: 30px;
     width: 30px;
     color: white;
-    background-color: darkgray;
+    background-color: 899fb2e3;
     background-image: url('../static/images/delete.png');
     border: none;
     border-radius: 12px;
@@ -264,14 +264,7 @@
 }
 
 .pop_counter {
-    color: darkgray;
-}
-
-.insta_link:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    color: cadetblue;
-    transform: scale(1.025);
+    color: 899fb2e3;
 }
 
 .container_newevent {
@@ -386,8 +379,24 @@ td a.insta_link:hover {
     transform: scale(1.025);
 }
 
+.insta_link {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Varela Round', sans-serif;
+    color: cadetblue;
+    transition: all 0.2s ease-in-out;
+}
+
+.insta_link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: 899fb2e3;
+    transform: scale(1.025);
+}
+
 input::placeholder {
-    color: darkgray;
+    color: 899fb2e3;
     font-size: 16px;
     font-family: Varela Round;
 }
@@ -479,7 +488,7 @@ th {
     position: sticky;
     padding: 10px;
     text-align: center;
-    border: 1px solid darkgray(232, 222, 222);
+    border: 1px solid 899fb2e3(232, 222, 222);
     font-weight: bolder;
     background-color: #eee;
     color: #899fb2e3;
