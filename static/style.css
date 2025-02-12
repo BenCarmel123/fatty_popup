@@ -121,7 +121,7 @@
 }
 
 .corner_links a:hover {
-    color: #333;
+    color: #899fb2e3;
     cursor: pointer;
     text-decoration: underline;
     font-size: large;
@@ -267,18 +267,11 @@
     color: darkgray;
 }
 
-.insta_link {
-    font-size: 14px;
-    font-weight: bolder;
-    text-decoration: none;
-    font-family: 'Varela Round', sans-serif;
-    color: darkgray;
-}
-
 .insta_link:hover {
     text-decoration: underline;
     cursor: pointer;
     color: cadetblue;
+    transform: scale(1.025);
 }
 
 .container_newevent {
@@ -304,13 +297,13 @@ details summary {
 .event_details_container {
     display: flex;
     flex-direction: column;
-    background-color: cadetblue;
+    background-color: #5f9ea0b5;
     border-radius: 6px;
     position: fixed;
     width: auto;
     height: auto;
-    max-width: 50vw;
-    max-height: 50vh;
+    max-width: 75vw;
+    max-height: 75vh;
     color: #e7e3e3;
     justify-content: center;
     align-items: center;
@@ -383,12 +376,14 @@ td a.insta_link {
     text-decoration: none;
     font-family: 'Varela Round', sans-serif;
     color: cadetblue;
+    transition: all 0.2s ease-in-out;
 }
 
 td a.insta_link:hover {
     text-decoration: underline;
     cursor: pointer;
-    color: cadetblue;
+    color: #899fb2e3;
+    transform: scale(1.025);
 }
 
 input::placeholder {
@@ -461,7 +456,7 @@ table {
     overflow: hidden;
     width: 80%;
     border-collapse: collapse;
-    margin-left: 180px;
+    margin-left: 165px;
     margin-right: 80px;
     box-shadow: 0 2px 9px rgb(143 87 87 / 10%);
     border-collapse: separate;
@@ -496,12 +491,10 @@ th {
 }
 
 td {
-    border: 1px solid darkgray;
-    padding: 10px;
     text-align: center;
     letter-spacing: .1rem;
     border: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #899fb2e3;
     padding: 12px 15px;
     font-weight: bold;
     color:#504d4dd4;
@@ -544,7 +537,7 @@ html {
   
   @media screen and (max-width: 768px) {
     table {
-        transform: scale(0.75);
+        transform: scale(0.9);
         transform-origin: center;
     }
 }
