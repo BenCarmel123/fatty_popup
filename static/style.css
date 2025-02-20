@@ -14,9 +14,9 @@
     border-radius: 110px;
     border-color: cadetblue;
     background: cadetblue;
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     transition: all 0.1s ease-in-out;
-    font-size: 14px;
+    font-size: large;
     padding: 12px 24px;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .form_field {
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     font-size: 20px;
     font-weight: bold;
     color: #899fb2e3;
@@ -100,7 +100,7 @@
 .title {
     font-style: italic;
     font-size: 55px;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     font-weight: 700;
     animation-name: entry;
     animation-duration: 1.3s;
@@ -110,13 +110,12 @@
 }
 
 .corner_links a {
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     font-weight: bold;
     margin-left: 10px;
-    font-size: 20px;
     text-decoration: none;
     color: cadetblue;
-    font-size: medium;
+    font-size: larger;
     transition: all 0.2s ease-in-out;
 }
 
@@ -124,7 +123,7 @@
     color: #899fb2e3;
     cursor: pointer;
     text-decoration: underline;
-    font-size: large;
+    font-size: larger;
     transform: scale(1.025);
 }
 
@@ -221,7 +220,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    font-family: 'Varela Round';
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     font-weight: bold;
     color: #333;
 }
@@ -233,7 +232,7 @@
     color: black;
     border-radius: 8px;
     cursor: pointer;
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     background-color: #f9f9f9;
     margin-top: -20px;
@@ -328,7 +327,7 @@ details summary {
 
  p.event_details {
     font-size: medium;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     color: white;
     max-width: 600px;
     text-align: right;
@@ -338,10 +337,10 @@ details summary {
 
 body {
     text-align: center;
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     background-image: radial-gradient(#ffffff 19%, #efefef);
     -webkit-font-smoothing: antialiased;
-    letter-spacing: .2rem;
+    letter-spacing: .3rem;
 }
 
 h2 {
@@ -366,7 +365,7 @@ td a.insta_link {
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     color: cadetblue;
     transition: all 0.2s ease-in-out;
 }
@@ -382,7 +381,7 @@ td a.insta_link:hover {
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     color: #899fb2e3;
     transition: all 0.2s ease-in-out;
 }
@@ -397,7 +396,7 @@ td a.insta_link:hover {
 input::placeholder {
     color: #899fb2e3;
     font-size: 16px;
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
 }
 
 input[type="text"] {
@@ -405,7 +404,7 @@ input[type="text"] {
     max-width: 300px;
     padding: 10px;
     font-size: 16px;
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -418,7 +417,7 @@ input[type="email"] {
     max-width: 300px;
     padding: 10px;
     font-size: 16px;
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -433,7 +432,7 @@ input[type="password"] {
     max-width: 300px;
     padding: 10px;
     font-size: 16px;
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -448,7 +447,7 @@ input[type="date"], input[type="time"] {
     max-width: 150px;
     padding: 10px;
     font-size: 16px;
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -511,7 +510,7 @@ textarea {
     max-width: 600px;
     padding: 5px;
     font-size: 16px;
-    font-family: Varela Round;
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     background-color: #f9f9f9;
     color: #333;
@@ -547,3 +546,7 @@ html {
         transform-origin: center;
     }
 }
+
+
+
+
