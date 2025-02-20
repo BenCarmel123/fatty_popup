@@ -6,17 +6,16 @@
 
 .button3 {
     font-style: italic;
-    letter-spacing: .07rem;
+    letter-spacing: .2rem;
     color: #f4f4f4;
-    font-weight: bold;
     cursor: pointer;
     display: inline-block;
     border-radius: 110px;
     border-color: cadetblue;
     background: cadetblue;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     transition: all 0.1s ease-in-out;
     font-size: large;
+    font-family: "Courgette", serif;  ;
     padding: 12px 24px;
 }
 
@@ -70,7 +69,6 @@
 }
 
 .form_field {
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     font-size: 20px;
     font-weight: bold;
     color: #899fb2e3;
@@ -100,7 +98,6 @@
 .title {
     font-style: italic;
     font-size: 55px;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     font-weight: 700;
     animation-name: entry;
     animation-duration: 1.3s;
@@ -110,7 +107,6 @@
 }
 
 .corner_links a {
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     font-weight: bold;
     margin-left: 10px;
     text-decoration: none;
@@ -220,7 +216,6 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     font-weight: bold;
     color: #333;
 }
@@ -232,7 +227,6 @@
     color: black;
     border-radius: 8px;
     cursor: pointer;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     background-color: #f9f9f9;
     margin-top: -20px;
@@ -327,7 +321,6 @@ details summary {
 
  p.event_details {
     font-size: medium;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     color: white;
     max-width: 600px;
     text-align: right;
@@ -337,11 +330,12 @@ details summary {
 
 body {
     text-align: center;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
+    font-family: "Courgette", serif; 
     background-image: radial-gradient(#ffffff 19%, #efefef);
     -webkit-font-smoothing: antialiased;
     letter-spacing: .3rem;
 }
+    
 
 h2 {
     color: cadetblue;
@@ -365,7 +359,6 @@ td a.insta_link {
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     color: cadetblue;
     transition: all 0.2s ease-in-out;
 }
@@ -381,7 +374,6 @@ td a.insta_link:hover {
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     color: #899fb2e3;
     transition: all 0.2s ease-in-out;
 }
@@ -396,7 +388,6 @@ td a.insta_link:hover {
 input::placeholder {
     color: #899fb2e3;
     font-size: 16px;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
 }
 
 input[type="text"] {
@@ -404,7 +395,6 @@ input[type="text"] {
     max-width: 300px;
     padding: 10px;
     font-size: 16px;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -417,7 +407,6 @@ input[type="email"] {
     max-width: 300px;
     padding: 10px;
     font-size: 16px;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -432,7 +421,6 @@ input[type="password"] {
     max-width: 300px;
     padding: 10px;
     font-size: 16px;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -447,7 +435,6 @@ input[type="date"], input[type="time"] {
     max-width: 150px;
     padding: 10px;
     font-size: 16px;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -510,7 +497,6 @@ textarea {
     max-width: 600px;
     padding: 5px;
     font-size: 16px;
-    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive; 
     border: 2px solid #ccc;
     background-color: #f9f9f9;
     color: #333;
