@@ -153,6 +153,7 @@
     color: cadetblue;
     font-weight: bold;
     text-align: left;
+    font-size: x-large;
 }
 
 .close_pop {
@@ -349,11 +350,6 @@ body {
     letter-spacing: .3rem;
 }
 
-h2 {
-    color: cadetblue;
-    font-weight: bold;
-}
-
 h2#mood {
     font-style: italic;
 }
@@ -495,7 +491,7 @@ th {
     font-weight: bolder;
     background-color: #eee;
     color: #899fb2e3;
-    padding: 32px 17px;
+    padding: 17px 17px;
     top: 0;
     z-index: 2;
     font-size: larger;
