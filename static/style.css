@@ -6,7 +6,7 @@
 
 .button3 {
     font-style: italic;
-    letter-spacing: .07rem;
+    letter-spacing: .2rem;
     color: #f4f4f4;
     font-weight: bold;
     cursor: pointer;
@@ -147,6 +147,12 @@
 .delete_button:hover {
     background-color: cadetblue;
     cursor: pointer;
+}
+
+.tableTitle {
+    color: cadetblue;
+    font-weight: bold;
+    text-align: left;
 }
 
 .close_pop {
@@ -327,7 +333,7 @@ details summary {
 
  p.event_details {
     font-size: medium;
-    font-family: "Courgette", serif; 
+    font-family: system-ui;
     color: white;
     max-width: 600px;
     text-align: right;
@@ -489,10 +495,10 @@ th {
     font-weight: bolder;
     background-color: #eee;
     color: #899fb2e3;
-    padding: 12px 15px;
+    padding: 32px 17px;
     top: 0;
     z-index: 2;
-    font-size: large;
+    font-size: larger;
     letter-spacing: 0.12rem;
 }
 
@@ -500,7 +506,7 @@ td {
     text-align: center;
     letter-spacing: .1rem;
     border: none;
-    padding: 12px 15px;
+    padding: 30px 30px;
     font-weight: bold;
     color:#504d4dd4;
 }
@@ -534,7 +540,7 @@ html {
 .edge_cell
 {
     position: sticky;
-    font-size: medium;
+    font-size: large;
     font-weight: bold;
     color: #899fb2e3;
     background-color: #eee;
