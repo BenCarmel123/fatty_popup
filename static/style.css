@@ -6,13 +6,13 @@
 
 .button3 {
     letter-spacing: .2rem;
-    color: #f4f4f4;
+    color: #efefef;
     font-weight: bold;
     cursor: pointer;
     display: inline-block;
     border-radius: 110px;
-    border-color: cadetblue;
-    background: cadetblue;
+    border-color: #6fb1b3c2;
+    background: #6fb1b3c2;
     font-family: "Courgette", serif;
     transition: all 0.1s ease-in-out;
     font-size: large;
@@ -20,7 +20,7 @@
 }
 
 .button3:hover {
-    box-shadow: 0 4px 15px #899fb2e3(249, 251, 255, 0.5);
+    box-shadow: 0 4px 15px #6fb1b3c2(249, 251, 255, 0.5);
     transform: scale(1.1);
 }
 
@@ -182,14 +182,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: cadetblue;
+    color: #899fb2e3;
 }
 
 .password_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: cadetblue;
+    color: #899fb2e3;
 }
 
 .password_container div {
@@ -366,9 +366,10 @@ td a.insta_link {
 }
 
 td a.insta_link:hover {
-    text-decoration: underline;
-    cursor: pointer;
     color: #899fb2e3;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px;
     transform: scale(1.025);
 }
 
@@ -382,9 +383,10 @@ td a.insta_link:hover {
 }
 
 .insta_link:hover {
-    text-decoration: underline;
-    cursor: pointer;
     color: #899fb2e3;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px;
     transform: scale(1.025);
 }
 
