@@ -41,8 +41,9 @@
 }
 
 .pop_l:hover {
-    color: #899fb2e3;
+    color: #96a6b5;
     cursor: pointer;
+    transform: scale(1.025);
 }
 
 .to_login {
@@ -112,7 +113,6 @@
     font-family: "Courgette", serif; 
     font-weight: bold;
     margin-left: 10px;
-    text-decoration: none;
     color: #899fb2e3;
     font-size: medium;
     transition: all 0.2s ease-in-out;
@@ -121,7 +121,6 @@
 .corner_links a:hover {
     color: #899fb2e3;
     cursor: pointer;
-    text-decoration: underline;
     font-size: large;
     transform: scale(1.025);
 }
@@ -182,7 +181,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #899fb2e3;
+    color: cadetblue;
 }
 
 .password_container {
@@ -268,7 +267,7 @@
 }
 
 .pop_counter {
-    color: #899fb2e3;
+    color: cadetblue;
 }
 
 .container_newevent {
@@ -368,7 +367,6 @@ td a.insta_link {
 td a.insta_link:hover {
     color: #899fb2e3;
     cursor: pointer;
-    text-decoration: underline;
     font-size: 16px;
     transform: scale(1.025);
 }
@@ -385,7 +383,6 @@ td a.insta_link:hover {
 .insta_link:hover {
     color: #899fb2e3;
     cursor: pointer;
-    text-decoration: underline;
     font-size: 16px;
     transform: scale(1.025);
 }
@@ -466,12 +463,8 @@ table {
     border-spacing: 3;
 }
 
-tr:hover {
-    background-color: #f5f5f5;
-}
-
 tr:nth-child(even) {
-    background-color: #f5f7fa;
+    background-color: #f5f5f5;
 }
 
 tr:nth-child(odd) {
