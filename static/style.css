@@ -20,7 +20,7 @@
 }
 
 .button3:hover {
-    box-shadow: 0 4px 15px cadetblue(249, 251, 255, 0.5);
+    box-shadow: 0 4px 15px #899fb2e3(249, 251, 255, 0.5);
     transform: scale(1.1);
 }
 
@@ -35,7 +35,7 @@
 .pop_l {
     animation: fadeIn 4s;
     text-decoration: None;
-    color: cadetblue;
+    color: #899fb2e3;
     font-size: 25px;
     letter-spacing: 0.15rem;
 }
@@ -47,7 +47,7 @@
 
 .to_login {
     text-align: center;
-    color: cadetblue;
+    color: #899fb2e3;
     justify-content: center;
     align-content: center;
     font-weight: bold;
@@ -85,11 +85,11 @@
 }
 
 @keyframes entry {
-    0% {color: black; top:200px;}
-    25% {color:#2a2629d1; top:100px;}
-    50% {color:rgb(62, 78, 79); top:50px;}
-    75% {color: rgb(84, 118, 119); top:25px;}
-    100% {color:cadetblue; top:0px;}
+    0% {color: #899fb200; top:200px;}
+    25% {color:#899fb233; top:100px;}
+    50% {color:#899fb262(62, 78, 79); top:50px;}
+    75% {color: #899fb293(84, 118, 119); top:25px;}
+    100% {color:#899fb2e3; top:0px;}
 }
 
 .title_container {
@@ -113,7 +113,7 @@
     font-weight: bold;
     margin-left: 10px;
     text-decoration: none;
-    color: cadetblue;
+    color: #899fb2e3;
     font-size: medium;
     transition: all 0.2s ease-in-out;
 }
@@ -144,12 +144,12 @@
 }
 
 .delete_button:hover {
-    background-color: cadetblue;
+    background-color: #899fb2e3;
     cursor: pointer;
 }
 
 .tableTitle {
-    color: cadetblue;
+    color: #899fb2e3;
     font-weight: bold;
     font-size: 30px;
 }
@@ -169,7 +169,7 @@
 }
 
 .close_pop:hover {
-    background-color: cadetblue;
+    background-color: #899fb2e3;
     cursor: pointer;
 }
 
@@ -361,7 +361,7 @@ td a.insta_link {
     font-weight: bold;
     text-decoration: none;
     font-family: "Courgette", serif; 
-    color: cadetblue;
+    color: #899fb2e3;
     transition: all 0.2s ease-in-out;
 }
 
@@ -384,7 +384,7 @@ td a.insta_link:hover {
 .insta_link:hover {
     text-decoration: underline;
     cursor: pointer;
-    color: cadetblue;
+    color: #899fb2e3;
     transform: scale(1.025);
 }
 
@@ -512,7 +512,7 @@ textarea {
 }
 
 h1 {
-    color: cadetblue;
+    color: #899fb2e3;
     letter-spacing: normal;
     font-family: "Courgette", serif;
 }
@@ -531,7 +531,7 @@ html {
     position: sticky;
     font-size: large;
     font-weight: bold;
-    color: #899fb23d;
+    color: #899fb2e3;
     background-color: #899fb23d;
     padding: 12px;
 }
