@@ -38,12 +38,13 @@
     color: #899fb2e3;
     font-size: 25px;
     letter-spacing: 0.15rem;
+    transition: all 0.2s ease-in-out;
 }
 
 .pop_l:hover {
     color: #96a6b5;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .to_login {
@@ -294,7 +295,7 @@ details summary {
 .event_details_container {
     display: flex;
     flex-direction: column;
-    background-color: 2#899fb2e3;
+    background-color: #899fb2e3;
     border-radius: 6px;
     position: fixed;
     width: auto;
