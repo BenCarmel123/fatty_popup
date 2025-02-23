@@ -482,7 +482,7 @@ th {
     text-align: center;
     border: 1px solid #899fb2e3(232, 222, 222);
     font-weight: bolder;
-    background-color: #eee;
+    background-color: #899fb23d;
     color: #899fb2e3;
     padding: 17px 17px;
     top: 0;
@@ -531,8 +531,8 @@ html {
     position: sticky;
     font-size: large;
     font-weight: bold;
-    color: #899fb2e3;
-    background-color: #eee;
+    color: #899fb23d;
+    background-color: #899fb23d;
     padding: 12px;
 }
   
