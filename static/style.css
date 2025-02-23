@@ -43,7 +43,7 @@
 .pop_l:hover {
     color: #96a6b5;
     cursor: pointer;
-    transform: scale(1.025);
+    font-size: 30px;
 }
 
 .to_login {
@@ -64,6 +64,7 @@
     letter-spacing: .05rem;
     display: flex;
     justify-content: center;
+    text-decoration: none;
     align-items: center;
     gap: 7px;
     position: absolute;
@@ -114,6 +115,7 @@
     font-weight: bold;
     margin-left: 10px;
     color: #899fb2e3;
+    text-decoration: none;
     font-size: medium;
     transition: all 0.2s ease-in-out;
 }
@@ -122,7 +124,6 @@
     color: #899fb2e3;
     cursor: pointer;
     font-size: large;
-    transform: scale(1.025);
 }
 
 .single_button_container {
@@ -365,7 +366,7 @@ td a.insta_link {
 }
 
 td a.insta_link:hover {
-    color: #899fb2e3;
+    color: #96a6b5;
     cursor: pointer;
     font-size: 16px;
     transform: scale(1.025);
@@ -381,7 +382,7 @@ td a.insta_link:hover {
 }
 
 .insta_link:hover {
-    color: #899fb2e3;
+    color: #96a6b5;
     cursor: pointer;
     font-size: 16px;
     transform: scale(1.025);
