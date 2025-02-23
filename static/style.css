@@ -11,8 +11,9 @@
     cursor: pointer;
     display: inline-block;
     border-radius: 110px;
-    border-color: #6fb1b3c2;
-    background: #6fb1b3c2;
+    border-color: white;
+    border-width: thin;
+    background: cadetblue;
     font-family: "Courgette", serif;
     transition: all 0.1s ease-in-out;
     font-size: large;
