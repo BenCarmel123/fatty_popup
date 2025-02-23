@@ -152,8 +152,11 @@
 
 .tableTitle {
     color: #899fb2e3;
+    background-color: #899fb23d;
     font-weight: bold;
     font-size: 30px;
+    border-radius: 33px;
+    padding: 12px;
 }
 
 .close_pop {
@@ -362,9 +365,11 @@ td a.insta_link {
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
-    font-family: "Courgette", serif; 
-    color: #899fb2e3;
+    font-family: "Courgette", serif;
     transition: all 0.2s ease-in-out;
+    background-color: aliceblue;
+    padding: 8px;
+    border-radius: 22px;
 }
 
 td a.insta_link:hover {
@@ -487,6 +492,7 @@ th {
     z-index: 2;
     font-size: larger;
     letter-spacing: 0.12rem;
+    border-radius: 11px;
 }
 
 td {
@@ -532,6 +538,7 @@ html {
     color: #899fb2e3;
     background-color: #899fb23d;
     padding: 12px;
+    border-radius: 11px;
 }
   
   @media screen and (max-width: 768px) {
