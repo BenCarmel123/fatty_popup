@@ -13,7 +13,7 @@
     border-radius: 110px;
     border-color: white;
     border-width: thin;
-    background: cadetblue;
+    background-color: #899fb2e3;
     font-family: "Courgette", serif;
     transition: all 0.1s ease-in-out;
     font-size: large;
@@ -21,7 +21,8 @@
 }
 
 .button3:hover {
-    box-shadow: 0 4px 15px #6fb1b3c2(249, 251, 255, 0.5);
+    background-color: rgb(67 64 64);
+    color: #efefef;
     transform: scale(1.1);
 }
 
@@ -39,7 +40,7 @@
     color: #899fb2e3;
     font-size: 25px;
     letter-spacing: 0.15rem;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .pop_l:hover {
@@ -118,12 +119,12 @@
     margin-left: 10px;
     color: #899fb2e3;
     text-decoration: none;
-    font-size: medium;
-    transition: all 0.2s ease-in-out;
+    font-size: 17px;
+    transition: all 0.1s ease-in-out;
 }
 
 .corner_links a:hover {
-    color: #899fb2e3;
+    color: rgb(67 64 64);;
     cursor: pointer;
     font-size: large;
 }
@@ -296,6 +297,10 @@ details summary {
     font-size: 18px;
 }
 
+details summary:hover {
+    color: rgb(67 64 64);
+}
+
 .event_details_container {
     display: flex;
     flex-direction: column;
@@ -336,7 +341,8 @@ details summary {
 }
 
  p.event_details {
-    font-size: medium;
+    letter-spacing: .1rem;
+    font-size: 16px;
     font-family: system-ui;
     color: white;
     max-width: 600px;
@@ -345,15 +351,27 @@ details summary {
     line-height: 1.65;
 }
 
-p.event_link {
-    font-size: medium;
+p.event_link a{
+    letter-spacing: .1rem;
+    font-size: 14px;
     font-family: system-ui;
-    color: white;
+    color: rgb(250, 250, 250);
     max-width: 600px;
     text-align: right;
     direction: rtl;
     line-height: 1.65;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
 }
+
+p.event_link a:hover
+{
+    cursor: pointer;
+    color:#504d4dd4;
+    font-weight: bolder;
+}
+
 
 body {
     text-align: center;
@@ -376,17 +394,17 @@ td a.insta_link {
     font-weight: bold;
     text-decoration: none;
     font-family: "Courgette", serif;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
     background-color: #899fb23d;
     padding: 8px;
     border-radius: 22px;
 }
 
 td a.insta_link:hover {
-    color: #96a6b5;
+    background-color: rgb(67 64 64);
+    color: #efefef;
     cursor: pointer;
     font-size: 16px;
-    transform: scale(1.025);
 }
 
 .insta_link {
@@ -395,15 +413,44 @@ td a.insta_link:hover {
     text-decoration: none;
     font-family: "Courgette", serif; 
     color: #899fb2e3;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .insta_link:hover {
-    color: #96a6b5;
+    background-color: rgb(67 64 64);
     cursor: pointer;
-    font-size: 16px;
-    transform: scale(1.025);
 }
+
+.share_container {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center; 
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.facebook, .whatsapp, .instagram, .copy_link {
+    cursor: pointer;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facebook img, .whatsapp img, .instagram img, .copy_link img {
+    width: 22px; 
+    height: 22px; 
+}
+
+.facebook img:hover, .whatsapp img:hover, .instagram img:hover, .copy_link img:hover  {
+    transform: scale(1.3);
+}
+
 
 input::placeholder {
     color: #899fb2e3;
