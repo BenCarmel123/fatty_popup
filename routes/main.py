@@ -38,9 +38,13 @@ def get_sorted_events(like=None):
     return query.order_by(Event.s_date).all()
 
 def event_counter(gap):
-    date_a = datetime.now().date()
-    date_b = (datetime.now() + timedelta(days=gap)).date()
-    return Event.query.filter(Event.s_date >= date_a, Event.s_date <= date_b).count()
+    try:
+        date_a = datetime.now().date()
+        date_b = (datetime.now() + timedelta(days=gap)).date()
+        return Event.query.filter(Event.s_date >= date_a, Event.s_date <= date_b).count()
+    except Exception as e:
+        print(f"Error counting events: {e}")
+        return 0
 
 def constructor(id, event_name, host_name, host_insta, chef1_name, chef1_insta, 
                 chef2_name, chef2_insta, type, description, location, s_date, e_date, res_link):
