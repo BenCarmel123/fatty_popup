@@ -28,7 +28,8 @@ def set_events():
                 description='אסף שטרית מכין ראמן צלול מציר עוף וטארה סויה, ותוספת של רולדת פרגית עם אצות. כל חמישי מ12-22 מחוץ לרומיה בר בשוק הכרמל',
                 location='Hacarmel 15, Tel Aviv',
                 s_date=next_thursday, 
-                e_date=next_thursday
+                e_date=next_thursday,
+                res_Link = 'https://ontopo.com/he/il/page/96992681'
             ))
 
         if new_events:

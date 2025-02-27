@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request
 from datetime import datetime, timedelta
+import validators
+
+def is_valid_url(url):
+    return validators.url(url)
 
 def valid_instagram(instagram):
    errors = []
@@ -18,7 +22,7 @@ def valid_word(word):
            errors.append("only letters")
    return errors
 
-def validate_event(event_name, host_name, host_insta, chef1_name, chef1_insta, chef2_name, chef2_insta, type, description, location, s_date, e_date):
+def validate_event(event_name, host_name, host_insta, chef1_name, chef1_insta, chef2_name, chef2_insta, type, description, location, s_date, e_date, res_link):
    res = ""
    if not event_name or len(event_name) > 40:
        res += "Event name" + "\n"
@@ -44,4 +48,6 @@ def validate_event(event_name, host_name, host_insta, chef1_name, chef1_insta, c
        res += "Date" + "\n"
    if e_date and e_date < s_date:
        res += "End date" + "\n"
+   if res_link and not is_valid_url(res_link):
+       res += "Link" + "\n"
    return res

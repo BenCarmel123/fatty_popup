@@ -94,6 +94,12 @@
                 <input class ="text" type="text" id="chef2_insta" name="chef2_insta" maxlength="20" 
                        value="{{ form_data.chef2_insta if form_data and form_data.chef2_insta != 'None' else '' }}" >
             </div>
+            <div class="item13">
+                <label for="res_link" class="form_field"> Reservation Link </label>
+                <input class ="text" type="text" id="res_link" name="res_link" maxlength="100" 
+                       value="{{ form_data.res_link if form_data and form_data.res_link != 'None' else '' }}" >
+            </div>
+
         </div>
         <br><br>
         <a href="/admin">

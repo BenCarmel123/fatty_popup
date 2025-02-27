@@ -17,5 +17,6 @@ class Event(db.Model):
     location = db.Column(db.String(100), nullable=False)
     s_date = db.Column(db.Date, nullable=False)
     e_date = db.Column(db.Date, nullable=False)
+    res_link = db.Column(db.String(100), nullable=True)
     def __repr__(self):
         return ""

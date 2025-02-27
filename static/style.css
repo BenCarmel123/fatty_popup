@@ -170,6 +170,9 @@
     z-index: 1001;
 }
 
+.mainTable {
+    color:blue
+}
 .close_pop:hover {
     background-color: #899fb2e3;
     cursor: pointer;

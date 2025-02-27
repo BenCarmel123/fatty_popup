@@ -43,7 +43,7 @@ def event_counter(gap):
     return Event.query.filter(Event.s_date >= date_a, Event.s_date <= date_b).count()
 
 def constructor(id, event_name, host_name, host_insta, chef1_name, chef1_insta, 
-                chef2_name, chef2_insta, type, description, location, s_date, e_date):
+                chef2_name, chef2_insta, type, description, location, s_date, e_date, res_link):
     if not id:
         new_event = Event(
                 event_name=event_name,
@@ -58,6 +58,7 @@ def constructor(id, event_name, host_name, host_insta, chef1_name, chef1_insta,
                 location=location,
                 s_date=s_date,
                 e_date=e_date,
+                res_link = res_link
             )
         return new_event
     else:
@@ -74,6 +75,7 @@ def constructor(id, event_name, host_name, host_insta, chef1_name, chef1_insta,
         event.location=location
         event.s_date=s_date
         event.e_date=e_date
+        event.res_link = res_link
         return event
 
 @main.route('/', methods=['GET', 'POST'])
@@ -155,8 +157,9 @@ def event_form():
         location = request.form.get('location', '')
         s_date = datetime.strptime(request.form.get('s_date', ''), "%Y-%m-%d").date()
         e_date = datetime.strptime(request.form.get('e_date',''), "%Y-%m-%d").date()
+        res_link = request.form.get('res_link', '')
         if editing_id:
-            event=constructor(editing_id, event_name, host_name, host_insta, chef1_name, chef1_insta, chef2_name, chef2_insta, type, description, location, s_date, e_date )
+            event=constructor(editing_id, event_name, host_name, host_insta, chef1_name, chef1_insta, chef2_name, chef2_insta, type, description, location, s_date, e_date, res_link)
             db.session.commit()
             flash("Event updated successfully")
             return render_template('admin.html', events = get_sorted_events(None))
@@ -169,9 +172,9 @@ def event_form():
             if exists: 
                 flash("Event already registered")
                 return render_template('admin.html', events = get_sorted_events(None))
-            message = validate_event(event_name, host_name, host_insta, chef1_name, chef1_insta, chef2_name, chef2_insta, type, description, location, s_date, e_date)
+            message = validate_event(event_name, host_name, host_insta, chef1_name, chef1_insta, chef2_name, chef2_insta, type, description, location, s_date, e_date, res_link)
             if message == "":
-                new_event = constructor(None,event_name, host_name, host_insta, chef1_name, chef1_insta, chef2_name, chef2_insta, type, description, location, s_date, e_date)
+                new_event = constructor(None,event_name, host_name, host_insta, chef1_name, chef1_insta, chef2_name, chef2_insta, type, description, location, s_date, e_date, res_link)
                 db.session.add(new_event)
                 db.session.commit()
                 return render_template('admin.html', events = get_sorted_events(None))
