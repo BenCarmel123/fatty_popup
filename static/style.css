@@ -28,10 +28,11 @@
 
 .table_container {
     overflow-x: auto;
-    margin-left: -200px;
+    margin: 0 auto;
     border-radius: 30px;
     border-color: #f9f9f9;
     scroll-padding: 100px;
+    max-width: 100%;
 }
 
 .pop_l {
@@ -380,6 +381,7 @@ body {
     -webkit-font-smoothing: antialiased;
     letter-spacing: .3rem;
 }
+
 div {
     font-size: x-large;
     color: #899fb2e3;
@@ -521,8 +523,6 @@ table {
     border-radius: 22px;
     overflow: hidden;
     width: 80%;
-    margin-left: 165px;
-    margin-right: 80px;
     box-shadow: 0 2px 9px rgb(143 87 87 / 10%);
     border-collapse: separate;
     border-spacing: 3;
@@ -600,5 +600,9 @@ html {
     table {
         transform: scale(0.9);
         transform-origin: center;
+    }
+
+    td, th {
+        padding: 14px 9px;
     }
 }
