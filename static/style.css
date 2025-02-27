@@ -430,7 +430,7 @@ td a.insta_link:hover {
     margin-top: 10px;
 }
 
-.facebook, .whatsapp, .instagram, .copy_link {
+.whatsapp, .copy_link {
     cursor: pointer;
     display: inline-block;
     width: 36px;
@@ -442,12 +442,12 @@ td a.insta_link:hover {
     justify-content: center;
 }
 
-.facebook img, .whatsapp img, .instagram img, .copy_link img {
+.whatsapp img, .copy_link img {
     width: 22px; 
     height: 22px; 
 }
 
-.facebook img:hover, .whatsapp img:hover, .instagram img:hover, .copy_link img:hover  {
+.whatsapp img:hover, .copy_link img:hover  {
     transform: scale(1.3);
 }
 
