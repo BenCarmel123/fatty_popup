@@ -345,6 +345,16 @@ details summary {
     line-height: 1.65;
 }
 
+p.event_link {
+    font-size: medium;
+    font-family: system-ui;
+    color: white;
+    max-width: 600px;
+    text-align: right;
+    direction: rtl;
+    line-height: 1.65;
+}
+
 body {
     text-align: center;
     font-family: "Courgette", serif; 
