@@ -10,7 +10,7 @@
 <body>
     {% with event_count = event_count %}
     {% endwith %}
-    <br> <br> <br> <br> <br>
+    <br> <br> <br> <br> <br> <br>
     <div class="pop_list_container">
         <h1 id="mood"><h1>
         <div class="button_container">
@@ -22,10 +22,8 @@
                 </a>
         </div>
         {% if event_count > 3 %}
-        <br>
-        <h5 class="pop_counter"> {{ event_count }} upcoming pop-ups to check out! </h5>
+        <h5 class="pop_counter"> {{ event_count }} upcoming events to check out! </h5>
         {% endif %}
-        <br>
     </div>
     <br> <br>
     <script src="{{ url_for('static', filename='scripts/pop2.js') }}"> </script>

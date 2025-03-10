@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preload" href="../static/images/ftuy4.jpg" as="image" crossorigin>
 </head>
 <body>
     <div class = "corner_links">
@@ -13,7 +14,7 @@
     <br> <br>
     {% with message = get_flashed_messages() %}
     {% if message %}
-        <h2 class ="error"> {{ message }} </h2> 
+        <h2 class ="error"> {{ message }} </h2>
     {% endif %}
     {% endwith %}
     <h2 class = "admin_panel">
@@ -38,12 +39,12 @@
                 <td>
                     <form action="{{ url_for('main.edit_event_by_id', id=event.id) }}" method="POST">
                         <button type="submit" class="delete_button"> ? </button>
-                    </form>      
+                    </form>
                 </td>
-                <td> 
+                <td>
                     <form action="{{ url_for('main.delete_event_by_id', id=event.id) }}" method="POST">
                         <button type="submit" class="delete_button"> X </button>
-                    </form>      
+                    </form>
                 </td>
             </tr>
         {% endfor %}
@@ -51,8 +52,8 @@
     </div>
     {% endif %}
     {% endwith %}
-    <br> <br> 
-    <a href='/event'> 
+    <br> <br>
+    <a href='/event'>
         <button class="button3"> Add </button>
     </a>
     <br>

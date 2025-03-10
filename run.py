@@ -13,11 +13,11 @@ app.config['SQLALCHEMY_BINDS'] = {
     'event_db': f'sqlite:///{os.path.join(db_dir, "event.db")}'
 }
 
-# Add these lines for better SQLite handling
+
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
     'connect_args': {
-        'timeout': 30,  # Longer timeout for operations
-        'check_same_thread': False  # Allow multiple threads to access the database
+        'timeout': 30,  
+        'check_same_thread': False  
     }
 }
 
@@ -28,10 +28,10 @@ app.config.update(
    SECRET_KEY=os.getenv('SECRET_KEY', 'benji')
 )
 
-# Make sure tables directory exists
+
 os.makedirs(os.path.join(base_dir, 'tables'), exist_ok=True)
 
-# Before initializing the app, verify we can write to the directory
+
 try:
     test_path = os.path.join(db_dir, 'test_write.txt')
     with open(test_path, 'w') as f:

@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+    <link rel="preload" href="../static/images/ftuy4.jpg" as="image" crossorigin>
 </head>
 <body>
     <div class = "corner_links">
@@ -29,17 +30,17 @@
             {% endif %}
             <div class="item1">
                 <label for="event_name" class="form_field"> Event Name </label>
-                <input class ="text" type="text" id="event_name" name="event_name" maxlength="40" 
+                <input class ="text" type="text" id="event_name" name="event_name" maxlength="40"
                        value="{{ form_data.event_name if form_data and form_data.event_name is not none else '' }}" required >
             </div>
             <div class="item2">
                 <label for="chef1_name" class="form_field"> Chef 1 Name </label>
-                <input class ="text" type="text" id="chef1_name" name="chef1_name" maxlength="40" 
+                <input class ="text" type="text" id="chef1_name" name="chef1_name" maxlength="40"
                        value="{{ form_data.chef1_name if form_data and form_data.chef1_name is not none else '' }}" required >
             </div>
             <div class="item3">
                 <label for="chef1_insta" class="form_field"> Chef 1 Instagram </label>
-                <input class ="text" type="text" id="chef1_insta" name="chef1_insta" maxlength="20" 
+                <input class ="text" type="text" id="chef1_insta" name="chef1_insta" maxlength="20"
                        value="{{ form_data.chef1_insta if form_data and form_data.chef1_insta is not none else '' }}" required >
             </div>
             <div class="item4">
@@ -51,18 +52,18 @@
             </div>
             <div class="item5">
                 <label for="description" class="form_field"> Event Description </label>
-                <textarea id="description" name="description" maxlength="500" required 
+                <textarea id="description" name="description" maxlength="500" required
                           style="width: 100%; height: 100px; border-radius: 10px;">{{ form_data.description if form_data and form_data.description is not none else '' }}</textarea>
             </div>
             <div class="item6">
                 <label for="location" class="form_field"> Location </label>
-                <input class ="event_input" type="text" id="location" name="location" maxlength="100" 
+                <input class ="event_input" type="text" id="location" name="location" maxlength="100"
                        value="{{ form_data.location if form_data and form_data.location != 'None' else '' }}" required >
             </div>
             <div class="item7">
                 <div class="date_time">
                     <label for="s_date" class="form_field"> Start Date </label>
-                    <input class ="event_input" type="date" id="s_date" name="s_date" 
+                    <input class ="event_input" type="date" id="s_date" name="s_date"
                         value="{{ form_data.s_date if form_data and form_data.s_date != 'None' else '' }}" required >
                 </div>
             </div>
@@ -76,27 +77,27 @@
             <h4> Optional Fields </h4>
             <div class="item9">
                 <label for="host_name" class="form_field"> Host Name </label>
-                <input class ="text" type="text" id="host_name" name="host_name" maxlength="40" 
+                <input class ="text" type="text" id="host_name" name="host_name" maxlength="40"
                        value="{{ form_data.host_name if form_data and form_data.host_name != 'None' else '' }}" >
             </div>
             <div class="item10">
                 <label for="host_insta" class="form_field"> Host Instagram </label>
-                <input class ="text" type="text" id="host_insta" name="host_insta" maxlength="20" 
+                <input class ="text" type="text" id="host_insta" name="host_insta" maxlength="20"
                        value="{{ form_data.host_insta if form_data and form_data.host_insta != 'None' else '' }}" >
             </div>
             <div class="item11">
                 <label for="chef2_name" class="form_field"> Chef 2 Name </label>
-                <input class ="text" type="text" id="chef2_name" name="chef2_name" maxlength="40" 
+                <input class ="text" type="text" id="chef2_name" name="chef2_name" maxlength="40"
                        value="{{ form_data.chef2_name if form_data and form_data.chef2_name != 'None' else '' }}" >
             </div>
             <div class="item12">
                 <label for="chef2_insta" class="form_field"> Chef 2 Instagram </label>
-                <input class ="text" type="text" id="chef2_insta" name="chef2_insta" maxlength="20" 
+                <input class ="text" type="text" id="chef2_insta" name="chef2_insta" maxlength="20"
                        value="{{ form_data.chef2_insta if form_data and form_data.chef2_insta != 'None' else '' }}" >
             </div>
             <div class="item13">
                 <label for="res_link" class="form_field"> Reservation Link </label>
-                <input class ="text" type="text" id="res_link" name="res_link" maxlength="100" 
+                <input class ="text" type="text" id="res_link" name="res_link" maxlength="100"
                        value="{{ form_data.res_link if form_data and form_data.res_link != 'None' else '' }}" >
             </div>
 
@@ -105,7 +106,7 @@
         <a href="/admin">
         <button type="submit" class="button3" value="Submit"> Submit </button>
         </a>
-        <br> <br> 
+        <br> <br>
     </form>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
