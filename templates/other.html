@@ -6,38 +6,41 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="preload" href="../static/images/ftuy4.jpg" as="image" crossorigin>
     </head>
     <body>
+
         <div class="corner_links">
             <a href="/pop"> Pop </a>
         </div>
         <br> <br>
         {% with other_list = other_list %}
         {% if not other_list %}
-        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
-        <h4 class="pop_counter"> No upcoming pop ups </h4>
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+        <h4> No upcoming pop ups </h4>
         {% else %}
-        <h2 class="tableTitle"> All Other Pop ups </h2>
+        <h2 class="tableTitle"> More Pop ups </h2>
         <div class="table_container">
             <table>
                 <tr>
                     <th></th>
-                    <th>What's Poppin'?</th>
-                    <th>At</th>
-                    <th>By</th>
-                    <th>Details</th>
+                    <th> <p class="tableHeader"> What's Poppin'? </p> </th>
+                    <th> <p class="tableHeader"> At </p> </th>
+                    <th> <p class="tableHeader"> By </p> </th>
+                    <th> <p class="tableHeader"> Details </p> </th>
+                    <th></th>
                 </tr>
                 {% for event in other_list %}
                     <tr>
-                        <td class="edge_cell"> {{display_date(event.s_date, event.e_date)}} </td>
-                        <td> {{ event.event_name }} </td>
+                        <td class="edge_cell"> {{ display_date(event.s_date, event.e_date) }} </td>
+                        <td> <p class="event_name"> {{ event.event_name }} </p> </td>
                         <td>
-                            <a href="https://www.google.com/maps/search/{{ event.location | urlencode }}" 
-                            target="_blank" class="insta_link"> {{display_location(event.host_name, event.location)}}
+                            <a href="https://www.google.com/maps/search/{{ event.location | urlencode }}"
+                            target="_blank" class="insta_link"> {{ display_location(event.host_name, event.location) }}
                             </a>
                             {% if event.host_insta %}
-                            <br> <br> 
-                            <a href="https://www.instagram.com/{{ event.host_insta[1:] }}/" class="insta_link"> 
+                            <br> <br>
+                            <a href="https://www.instagram.com/{{ event.host_insta[1:] }}/" class="insta_link" target="_blank" >
                                 {{ event.host_insta }} </a>
                             {% endif %}
                         </td>
@@ -47,15 +50,18 @@
                             </a>
                             {% if event.chef2_name %}
                             <br> <br>
-                            <a href="https://www.instagram.com/{{ event.chef2_insta[1:] }}/" 
+                            <a href="https://www.instagram.com/{{ event.chef2_insta[1:] }}/"
                             target="_blank" class="insta_link"> {{ event.chef2_name }}
                             </a>
                             {% endif %}
                         </td>
-                        <td class="edge_cell"> 
-                            <details> 
-                                <summary data-description = "{{event.description}}" ></summary>
+                        <td>
+                            <details>
+                                <summary data-description="{{event.description}}" data-reservation="{{event.res_link}}">
+                                </summary>
                             </details>
+                        </td>
+                        <td class="edge_cell">
                         </td>
                     </tr>
                 {% endfor %}
@@ -65,21 +71,28 @@
                     <td class="edge_cell"></td>
                     <td class="edge_cell"></td>
                     <td class="edge_cell"></td>
+                    <td class="edge_cell"></td>
                 </tr>
             </table>
-            <div class="wrapper">
-            <div class="event_details_container">
-                <p class="event_details">
-                </p>   
-                <p class="event_link">
-                <a href= "{event.res_link}" target="_blank"> להזמנת מקום </a>
-                </p>  
-            </div>
-            </div>
         </div>
         {% endif %}
+            <div class="wrapper">
+                <div class="event_details_container">
+                    <p class="event_details"></p>
+                    <p class="event_link"></p>
+                    <div class="share_container">
+                        <a class="whatsapp" target="_blank">
+                            <img src="{{ url_for('static', filename='images/whatsapp.png') }}">
+                        </a>
+                        <a class="copy_link">
+                            <img src="{{ url_for('static', filename='images/link.png') }}" >
+                        </a>
+                    </div>
+                </div>
+            </div>
         {% endwith %}
         <br> <br> <br>
         </body>
+    <script src="{{ url_for('static', filename='scripts/position.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/pop.js') }}"></script>
 </html>

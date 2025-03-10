@@ -5,30 +5,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preload" href="../static/images/ftuy4.jpg" as="image" crossorigin>
 </head>
 <body>
     {% with event_count = event_count %}
     {% endwith %}
-    <br> <br> <br> <br> <br> 
+    <br> <br> <br> <br> <br>
     <div class="pop_list_container">
-        <h2 id="mood"> What's the plan? <h2>
+        <h1 id="mood"><h1>
         <div class="button_container">
-            <div class="item1">
                 <a href="/ramen">
                     <button class="button3"> Ramen </button>
                 </a>
-            </div>
-            <div class="item3">
                 <a href="/other">
                     <button class="button3"> Other </button>
                 </a>
-            </div>
         </div>
         {% if event_count > 3 %}
         <br>
         <h5 class="pop_counter"> {{ event_count }} upcoming pop-ups to check out! </h5>
         {% endif %}
-        <br> 
+        <br>
     </div>
-    <br> <br> 
+    <br> <br>
+    <script src="{{ url_for('static', filename='scripts/pop2.js') }}"> </script>
 </body>
